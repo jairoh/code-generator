@@ -1,0 +1,43 @@
+* {
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.user_lists {
+	margin: 20px auto;
+	width: 1000px;
+	text-align: center;
+	border: 0;
+}
+.user_lists table {
+	text-align: left;
+	width: 100%;
+}
+.user_lists .tr_green {
+	background: #43E032;
+}
+.user_lists .tr_blue {
+	background: #3498db;
+}
+.programmers_trophy {
+	height: 20px;
+}
+.easy_name {
+	background-color: #43E032;
+}
+.week-picker {
+	position: absolute;
+}
+#pick_week {
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #A100FF;
+}
+
+.average {
+	padding: 2px 4px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #3498db;
+	border-radius: 3px;
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
