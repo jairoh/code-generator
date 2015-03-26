@@ -40,6 +40,7 @@ class LoginController extends BaseController {
 		Session::put( 'user_id', $user_info->user_id );
 		Session::put( 'firstname', $user_info->firstname );
 		Session::put( 'lastname', $user_info->lastname );
+		Session::put( 'user_type_id', $user_info->user_type_id );
 
 		//redirect to home page
 		return Redirect::to( 'category' );

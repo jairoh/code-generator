@@ -1,0 +1,19 @@
+* {
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.problem_list {
+	margin: 20px auto;
+	width: 1000px;
+	text-align: center;
+	border: 0;
+}
+.problem_list table {
+	text-align: left;
+	width: 100%;
+}
+.problem_list .tr_green {
+	background: #43E032;
+}
+.problem_list .tr_blue {
+	background: #3498db;
+}

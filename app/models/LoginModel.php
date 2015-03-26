@@ -33,7 +33,7 @@ Class LoginModel extends Eloquent {
 
 	//returns the id of the user
 	public function get_user_info ( $email, $password ) {
-		$data = DB::select( "SELECT `user_id`, `firstname`, `lastname` FROM `user` WHERE `email_address` = ? AND `password` = SHA2( '$password', 224 );", array( $email ) );
+		$data = DB::select( "SELECT `user_id`, `firstname`, `lastname`, `user_type_id` FROM `user` WHERE `email_address` = ? AND `password` = SHA2( '$password', 224 );", array( $email ) );
 		return count( $data )? $data [ 0 ] : array();
 	}
 
