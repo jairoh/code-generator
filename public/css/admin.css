@@ -17,3 +17,67 @@
 .problem_list .tr_blue {
 	background: #3498db;
 }
+
+vs {
+	font-weight: bold;
+	padding: 2px 4px;
+	color: #EB3535;
+	background-color: #f9f2f4;
+	white-space: nowrap;
+	border-radius: 4px;
+}
+
+ps {
+	font-weight: bold;
+	padding: 2px 4px;
+	color: #0C9;
+	background-color: #f9f2f4;
+	white-space: nowrap;
+	border-radius: 4px;
+}
+cond {
+	font-weight: bold;
+	padding: 2px 4px;
+	color: #52B3D9;
+	background-color: #f9f2f4;
+	white-space: nowrap;
+	border-radius: 4px;
+}
+ws {
+	font-weight: bold;
+	padding: 2px 4px;
+	color: #d35400;
+	background-color: #f9f2f4;
+	white-space: nowrap;
+	border-radius: 4px;
+}
+dws {
+	font-weight: bold;
+	padding: 2px 4px;
+	color: #e67e22;
+	background-color: #f9f2f4;
+	white-space: nowrap;
+	border-radius: 4px;
+}
+fls {
+	font-weight: bold;
+	padding: 2px 4px;
+	color: #e74c3c;
+	background-color: #f9f2f4;
+	white-space: nowrap;
+	border-radius: 4px;
+}
+ss {
+	font-weight: bold;
+	padding: 2px 4px;
+	color: #F39C12;
+	background-color: #f9f2f4;
+	white-space: nowrap;
+	border-radius: 4px;
+}
+
+#text_area_problem_descrp {
+	resize: none;
+	width: 100%;
+	min-height: 300px;
+}
