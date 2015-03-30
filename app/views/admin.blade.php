@@ -6,6 +6,7 @@
   <script type="text/javascript" src="{{$root_path}}js/bootstrap.min.js" ></script>
 
   <link href="{{$root_path}}css/admin.css" rel="stylesheet">
+  <script type="text/javascript" src="{{$root_path}}js/admin.js" ></script>
 @stop
 
 @section( 'content' )
@@ -21,6 +22,7 @@
     </ul>
   </div>
 
+  <!-- EASY PROBLEMS -->
   <table class="problem_list table" >
     <tr class="tr_green" >
       <td colspan="3" ><b>Manage [Easy Problems]</b></td>
@@ -34,19 +36,18 @@
     <?php foreach( $easy_problems as $problem ): ?>
     <tr>
       <td><b>{{$problem->level}}</b></td>
-      <td>{{$problem->description}}</td>
-      <td><button type="button" data-target="#myModal" data-toggle="modal" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></button></td>
+      <td><p id="prob_{{$problem->problem_id}}" >{{$problem->description}}</p></td>
+      <td><button type="button" data-target="#editProbModal" onClick="feed_problem_details( 'Easy', {{$problem->problem_id}}, {{$problem->level}} );" data-toggle="modal" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></button></td>
     </tr>
     <?php endforeach; ?>
 
 
   </table>
+  <!-- END EASY PROBLEMS -->
 
   
 
-
-
-
+  <!-- AVERAGE PROBLEMS -->
   <table class="problem_list table" >
     <tr class="tr_blue" >
       <td colspan="3" ><b>Manage [Average Problems]</b></td>
@@ -61,23 +62,24 @@
     <?php foreach( $average_problems as $problem ): ?>
     <tr>
       <td><b>{{$problem->level}}</b></td>
-      <td>{{$problem->description}}</td>
-      <td></td>
+      <td><p id="prob_{{$problem->problem_id}}" >{{$problem->description}}</p></td>
+      <td><button type="button" data-target="#editProbModal" onClick="feed_problem_details( 'Average', {{$problem->problem_id}}, {{$problem->level}} );" data-toggle="modal" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></button></td>
     </tr>
     <?php endforeach; ?>
 
 
   </table>
+  <!-- END AVERAGE PROBLEMS -->
 
   
 
-  <!-- Edit user modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <!-- Edit problem description modal -->
+  <div class="modal fade" id="editProbModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <h5 class="modal-title" id="myModalLabel">Update <span>Easy</span> Problem Level <span>1</span> </h5>
+          <h5 class="modal-title" id="myModalLabel">Update <span id="cat" >Easy</span> Problem Level <span id="level" >1</span> </h5>
         </div>
         <div class="modal-body">
           
@@ -118,7 +120,7 @@
       </div>
     </div>
   </div>
-  <!-- End edit user modal -->
+  <!-- End edit problem description modal -->
 
 
 
