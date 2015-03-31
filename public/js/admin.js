@@ -1,7 +1,6 @@
 //show problem details in the modal for edit
 function feed_problem_details ( category_descrip, problem_id, problem_level ) {
-	problem_description = $( '#prob_' + problem_id ).text();
-
+	problem_description = $( '#prob_' + problem_id ).html();
 
 	$( "#cat" ).text( category_descrip );
 	$( "#level" ).text( problem_id );

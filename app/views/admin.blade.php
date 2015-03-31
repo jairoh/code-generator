@@ -37,7 +37,7 @@
     <tr>
       <td><b>{{$problem->level}}</b></td>
       <td><p id="prob_{{$problem->problem_id}}" >{{$problem->description}}</p></td>
-      <td><button type="button" data-target="#editProbModal" onClick="feed_problem_details( 'Easy', {{$problem->problem_id}}, {{$problem->level}} );" data-toggle="modal" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></button></td>
+      <td><button type="button" data-target="#editProbModal" onClick="feed_problem_details( 'Easy', {{$problem->problem_id}}, {{$problem->level}} );" data-toggle="modal" class="btn btn-xs btn-warning"><i class="glyphicon glyphicon-edit"></i></button></td>
     </tr>
     <?php endforeach; ?>
 
@@ -63,7 +63,7 @@
     <tr>
       <td><b>{{$problem->level}}</b></td>
       <td><p id="prob_{{$problem->problem_id}}" >{{$problem->description}}</p></td>
-      <td><button type="button" data-target="#editProbModal" onClick="feed_problem_details( 'Average', {{$problem->problem_id}}, {{$problem->level}} );" data-toggle="modal" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></button></td>
+      <td><button type="button" data-target="#editProbModal" onClick="feed_problem_details( 'Average', {{$problem->problem_id}}, {{$problem->level}} );" data-toggle="modal" class="btn btn-xs btn-warning "><i class="glyphicon glyphicon-edit"></i></button></td>
     </tr>
     <?php endforeach; ?>
 
@@ -105,7 +105,14 @@
              <td><textarea id="text_area_problem_descrp" ></textarea></td>
             </tr>
 
+            <tr>
+              <td>
+                Restore default description: <button type="button" class="btn btn-success btn-sm glyphicon glyphicon-repeat"  ></button>
+              </td>
+            </tr>
           </table>
+
+
 
           <div id="update_errors" ></div>
 
