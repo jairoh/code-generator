@@ -32,5 +32,9 @@ Class AdminController extends BaseController {
 		return View::make( 'admin', $this->data );
 	}
 
+	//return ajax call
+	function get_orig_prob_descrip () {
+		return $this->adminModel->get_orig_prob_descrip( Input::get( 'problem_id' ) );
+	}
 
 }

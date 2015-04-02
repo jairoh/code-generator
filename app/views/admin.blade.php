@@ -107,7 +107,8 @@
 
             <tr>
               <td>
-                Restore default description: <button type="button" class="btn btn-success btn-sm glyphicon glyphicon-repeat"  ></button>
+                Restore default description: 
+                <button type="button" onClick="restore_default_descrip();" class="btn btn-success btn-sm glyphicon glyphicon-repeat"  ></button>
               </td>
             </tr>
           </table>
