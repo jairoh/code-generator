@@ -37,4 +37,9 @@ Class AdminController extends BaseController {
 		return $this->adminModel->get_orig_prob_descrip( Input::get( 'problem_id' ) );
 	}
 
+	//return ajax call
+	function update_problem_descrip () {
+		return $this->adminModel->update_problem_descrip( Input::get( 'problem_id' ), Input::get( 'new_problem_descrip' ) );
+	}
+
 }

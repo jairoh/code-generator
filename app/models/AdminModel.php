@@ -13,6 +13,9 @@ class AdminModel extends Eloquent {
 		return $data [ 0 ]->orig_description;
 	} 
 
-
+	//return 1 or 0
+	public function update_problem_descrip ( $problem_id, $new_problem_descrip ) {
+		return DB::update( "UPDATE `problem` SET `description` = ? WHERE `problem_id` = ?;", array( $new_problem_descrip, $problem_id ) );
+	}
 
 }

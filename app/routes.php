@@ -17,6 +17,7 @@ Route::group( array( 'prefix' => '/' ), function () {
 	Route::group( array( 'prefix' => 'admin' ), function () {
 		Route::get( '/', 'AdminController@display' );
 		Route::post( 'get_orig_prob_descrip', 'AdminController@get_orig_prob_descrip' );
+		Route::post( 'update_problem_descrip', 'AdminController@update_problem_descrip' );
 	} );
 
 	Route::get( 'req', function () {

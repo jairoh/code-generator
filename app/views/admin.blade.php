@@ -121,7 +121,7 @@
         
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="update_password_btn" >Save changes</button>
+            <button type="button" class="btn btn-primary" onClick="update_problem_descrip();" >Save changes</button>
           </div>
 
 
