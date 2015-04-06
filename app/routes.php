@@ -13,6 +13,7 @@
 
 Route::group( array( 'prefix' => '/' ), function () {
 	Route::get( '/', 'HomeController@direction' );
+	Route::get( '/home', 'HomeController@font_page' );
 
 	Route::group( array( 'prefix' => 'admin' ), function () {
 		Route::get( '/', 'AdminController@display' );

@@ -16,4 +16,8 @@ class HomeController extends BaseController {
 		return ( Session::get( 'user_id' ) )? Redirect::to( '/category' ) : View::make( 'login', $this->data );
 	}
 
+	function font_page () {
+		return View::make( 'home', $this->data );
+	}
+
 }

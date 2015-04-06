@@ -39,7 +39,7 @@ function get_orig_prob_descrip ( problem_id ) {
 		       return 'Ajax request aborted.';
 		    } else {
 		       return 'Uncaught Error.\n' + jqXHR.responseText;
-		    }
+			}
 		}
 	} );
 }
