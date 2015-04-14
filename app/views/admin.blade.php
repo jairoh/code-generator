@@ -14,7 +14,8 @@
   <link rel="stylesheet" type="text/css" href="{{$root_path}}css/toolbar.css" />
   <div id="toolbar">
     <ul id="nav">
-      <li><a href="{{$root_path}}category" >Home</a></li>
+      <li><a href="{{$root_path}}home" >Home</a></li>
+      <?php if ( Session::get( 'user_type_id' ) == 1 ) { ?><li><a href="{{$root_path}}category">Category</a></li><?php } ?>
       <li><a href="{{$root_path}}profile" >Profile[<?php echo Session::get( 'firstname' ) . " " . Session::get( 'lastname' ); ?>]</a></li>
       <li><a href="{{$root_path}}ranking" >Ranking</a></li>
       <?php if ( Session::get( 'user_type_id' ) == 1 ) { ?><li><a href="{{$root_path}}admin">Admin</a></li><?php } ?>
@@ -70,6 +71,30 @@
 
   </table>
   <!-- END AVERAGE PROBLEMS -->
+
+   <!-- DIFFICULT PROBLEMS -->
+  <table class="problem_list table" >
+    <tr class="tr_yellow" >
+      <td colspan="3" ><b>Manage [Difficult Problems]</b></td>
+    </tr>
+
+    <tr>
+      <td><b>Level</b></td>
+      <td><b>Description</b></td>
+      <td></td>
+    </tr>
+
+    <?php foreach( $difficult_problems as $problem ): ?>
+    <tr>
+      <td><b>{{$problem->level}}</b></td>
+      <td><p id="prob_{{$problem->problem_id}}" >{{$problem->description}}</p></td>
+      <td><button type="button" data-target="#editProbModal" onClick="feed_problem_details( 'Difficult', {{$problem->problem_id}}, {{$problem->level}} );" data-toggle="modal" class="btn btn-xs btn-warning "><i class="glyphicon glyphicon-edit"></i></button></td>
+    </tr>
+    <?php endforeach; ?>
+
+
+  </table>
+  <!-- END DIFFICULT PROBLEMS -->
 
   
 

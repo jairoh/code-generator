@@ -96,7 +96,7 @@ class RoundModel extends Eloquent {
 
 	//returns true if the current problem is available for user to use
 	function if_current_problem_available ( $problem_category_id, $level, $user_id, $problem_at_hand_status_id ) {
-		if ( ( $problem_category_id == 2 || $problem_category_id == 2 ) && $level == 1 ) {
+		if ( ( $problem_category_id == 2 || $problem_category_id == 3 ) && $level == 1 ) {
 			$problem_category_id--;
 			$level = 6;
 		}

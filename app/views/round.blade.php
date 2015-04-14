@@ -54,7 +54,8 @@
 <link rel="stylesheet" type="text/css" href="{{$root_path}}css/toolbar.css" />
 <div id="toolbar">
     <ul id="nav">
-        <li><a href="{{$root_path}}category" >Home</a></li>
+        <li><a href="{{$root_path}}home" >Home</a></li>
+        <?php if ( Session::get( 'user_type_id' ) == 1 ) { ?><li><a href="{{$root_path}}category">Category</a></li><?php } ?>
         <li><a href="{{$root_path}}profile" >Profile[<?php echo Session::get( 'firstname' ) . " " . Session::get( 'lastname' ); ?>]</a></li>
         <li><a href="{{$root_path}}ranking" >Ranking</a></li>
         <?php if ( Session::get( 'user_type_id' ) == 1 ) { ?><li><a href="{{$root_path}}admin">Admin</a></li><?php } ?>

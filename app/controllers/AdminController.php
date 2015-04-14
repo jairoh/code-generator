@@ -28,6 +28,7 @@ Class AdminController extends BaseController {
 
 		$this->data [ 'easy_problems' ] = $this->adminModel->get_all_problems( 1 );
 		$this->data [ 'average_problems' ] = $this->adminModel->get_all_problems( 2 );
+		$this->data [ 'difficult_problems' ] = $this->adminModel->get_all_problems( 3 );
 		
 		return View::make( 'admin', $this->data );
 	}

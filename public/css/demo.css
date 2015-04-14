@@ -1,0 +1,21 @@
+#dock_box {
+	height: 600px;
+}
+#tags_box {
+  height: 435px;
+}
+
+#generated_code_box {
+  border: solid 1px #CCC;
+  float: right;
+  width: 37.9%;
+  height: 299px;
+  overflow: auto;
+  background: #000;
+}
+#output_box {
+  border: solid 1px #ccc;
+  float: right;
+  width: 37.9%;
+  height: 292px;
+}

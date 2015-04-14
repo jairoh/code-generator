@@ -17,6 +17,9 @@
 .problem_list .tr_blue {
 	background: #3498db;
 }
+.problem_list .tr_yellow {
+	background: #E6F599;
+}
 
 vs {
 	font-weight: bold;

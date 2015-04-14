@@ -41,6 +41,8 @@
 	<div id="toolbar">
 		<ul id="nav">
 			<li><a href="{{$root_path}}home" >Home</a></li>
+			<li><a href="{{$root_path}}demo" >Demo</a></li>
+			<?php if ( Session::get( 'user_type_id' ) == 1 ) { ?><li><a href="{{$root_path}}category">Category</a></li><?php } ?>
 			<?php if ( Session::get( 'user_id' ) ) {?> <li><a href="{{$root_path}}profile" >Profile[<?php echo Session::get( 'firstname' ) . " " . Session::get( 'lastname' ); ?>]</a></li> <?php } ?>
 			<?php if ( Session::get( 'user_id' ) ) {?> <li><a href="{{$root_path}}ranking" >Ranking</a></li> <?php } ?>
 			<?php if ( Session::get( 'user_type_id' ) == 1 ) { ?><li><a href="{{$root_path}}admin">Admin</a></li><?php } ?>
@@ -54,7 +56,7 @@
 
 	<!-- BANNER BOX -->
 	<div id="banner_box">
-
+		
 	</div>
 	<!-- END BANNER BOX -->
 
@@ -80,6 +82,17 @@
 			<td>
 				<h3><span class="while">Contributors</span></h3>
 				
+				<table>
+					<tr>
+						<td><div class="circular"><img src="{{$root_path}}img/jairoh.jpg"></div></td>
+						<td><div class="circular"><img src="{{$root_path}}img/elyza.jpg"></div></td>
+					</tr>
+					<tr>
+						<td><div class="circular"><img src="{{$root_path}}img/jomar.jpg"></div></td>
+						<td><div class="circular"><img src="{{$root_path}}img/kirlven.jpg"></div></td>
+					</tr>
+				</table>
+
 			</td>
 
 		</tr>

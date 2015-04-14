@@ -21,7 +21,8 @@ class RankingController extends BaseController {
 		$this->data [ 'easy_level_top_students' ] = $this->rankingModel->get_all_problems_with_leading_students ( 1, $this->data [ 'date' ] );
 		$this->data [ 'average_level_top_students' ] = $this->rankingModel->get_all_problems_with_leading_students ( 2, $this->data [ 'date' ] );
 		$this->data [ 'dificult_level_top_students' ] = $this->rankingModel->get_all_problems_with_leading_students ( 3, $this->data [ 'date' ] );
-
+		
+		
 		/*echo "<pre>";
 		print_r( $this->data [ 'easy_level_top_students' ] );
 		die();*/

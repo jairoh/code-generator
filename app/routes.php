@@ -15,6 +15,8 @@ Route::group( array( 'prefix' => '/' ), function () {
 	Route::get( '/', 'HomeController@direction' );
 	Route::get( '/home', 'HomeController@font_page' );
 
+	Route::get( '/demo', 'DemoController@display' );
+
 	Route::group( array( 'prefix' => 'admin' ), function () {
 		Route::get( '/', 'AdminController@display' );
 		Route::post( 'get_orig_prob_descrip', 'AdminController@get_orig_prob_descrip' );
@@ -76,7 +78,7 @@ Route::group( array( 'prefix' => '/' ), function () {
 
 	Route::get( 'logout', function () {
 		Session::flush();
-		return Redirect::to( '/login' );
+		return Redirect::to( '/home' );
 	} );
 
 } );

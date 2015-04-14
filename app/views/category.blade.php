@@ -41,26 +41,22 @@
 <!-- div for fixed header  -->
 <div id="head" >
 	<link rel="stylesheet" href="{{$root_path}}css/default.css" />
-	<!-- header_holder-->
-	<div id="header_holder">
-		<div id="main_header">
-	    
-	    <div id="logo_box">
-	    	<img src="{{$root_path}}img/CFG_logo.png" />
-	    </div><!--end of logo_box-->
-	    
-	    	<table id="login_table">
-	        
-	        </table>
-	    </div><!--end of main_header-->
-	</div><!--end of header_holder-->
+	
+	<div id="main_header">
+        
+	        <div id="logo_box">
+	        	<img src="{{$root_path}}img/CFG_logo.png" />
+	        </div><!--end of logo_box-->
+        
+        </div><!--end of main_header-->
 
 
 	<!-- NAV BAR -->
 	<link rel="stylesheet" type="text/css" href="{{$root_path}}css/toolbar.css" />
 	<div id="toolbar">
 		<ul id="nav">
-			<li><a href="{{$root_path}}category" >Home</a></li>
+			<li><a href="{{$root_path}}home" >Home</a></li>
+			<?php if ( Session::get( 'user_type_id' ) == 1 ) { ?><li><a href="{{$root_path}}category">Category</a></li><?php } ?>
 			<li><a href="{{$root_path}}profile" >Profile[<?php echo Session::get( 'firstname' ) . " " . Session::get( 'lastname' ); ?>]</a></li>
 			<li><a href="{{$root_path}}ranking" >Ranking</a></li>
 			<?php if ( Session::get( 'user_type_id' ) == 1 ) { ?><li><a href="{{$root_path}}admin">Admin</a></li><?php } ?>
@@ -319,11 +315,13 @@
 			<h1>Difficult</h1>
 			<div id="level_holder">
 				<div class=<?php echo ( $problems_available [ 3 ] [ 1 ] != 0 )? 'level_opened' : 'level_closed' ?>>
-					<a class=<?php echo ( $problems_available [ 3 ] [ 1 ] == 2 )? 'level_solved_num' : 'level_unsolved_num' ?>>1</a>
+					<a class=<?php echo ( $problems_available [ 3 ] [ 1 ] == 2 )? 'level_solved_num' : 'level_unsolved_num' ?>
+					<?php if( $problems_available [ 3 ] [ 1 ] != 0 ) echo 'onClick="proceed_to_the_problem( 3, 1 );"' ?> >1</a>
 				</div><!--end of level-->
 
 				<div class=<?php echo ( $problems_available [ 3 ] [ 2 ] != 0 )? 'level_opened' : 'level_closed' ?>>
-					<a class=<?php echo ( $problems_available [ 3 ] [ 2 ] == 2 )? 'level_solved_num' : 'level_unsolved_num' ?>>2</a>
+					<a class=<?php echo ( $problems_available [ 3 ] [ 2 ] == 2 )? 'level_solved_num' : 'level_unsolved_num' ?> 
+						<?php if( $problems_available [ 3 ] [ 2 ] != 0 ) echo 'onClick="proceed_to_the_problem( 3, 2 );"' ?> >2</a>
 				</div><!--end of level-->
 
 				<div class=<?php echo ( $problems_available [ 3 ] [ 3 ] != 0 )? 'level_opened' : 'level_closed' ?>>

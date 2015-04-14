@@ -16,7 +16,8 @@
 	<link rel="stylesheet" type="text/css" href="{{$root_path}}css/toolbar.css" />
 	<div id="toolbar">
 		<ul id="nav">
-			<li><a href="{{$root_path}}category" >Home</a></li>
+			<li><a href="{{$root_path}}home" >Home</a></li>
+			<?php if ( Session::get( 'user_type_id' ) == 1 ) { ?><li><a href="{{$root_path}}category">Category</a></li><?php } ?>
 			<li><a href="{{$root_path}}profile" >Profile[<?php echo Session::get( 'firstname' ) . " " . Session::get( 'lastname' ); ?>]</a></li>
 			<li><a href="{{$root_path}}ranking" >Ranking</a></li>
 			<?php if ( Session::get( 'user_type_id' ) == 1 ) { ?><li><a href="{{$root_path}}admin">Admin</a></li><?php } ?>
@@ -122,6 +123,68 @@
 							<tr>
 								<td>
 									<kbd class="average" >{{$students->full_name}}</kbd>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<code>{{$students->no_attempts}} attempt(s)</code>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<?php 
+										if ( $students->no_attempts == 1 ) $n = 4;
+										else if ( $students->no_attempts == 2 ) $n = 3;
+										else if ( $students->no_attempts == 3 ) $n = 2;
+										else if ( $students->no_attempts == 4 ) $n = 1;
+										else $n = 0;
+										for( $i = 0; $i < $n; $i++ ) { ?>
+											<img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
+									<?php } ?>
+								</td>
+							</tr>
+						</table>
+						
+						
+					</td>
+				<?php endforeach; ?>
+			</tr>
+		<?php endforeach; ?>
+	</table>
+
+
+
+	<table class="user_lists table" >
+		<tr class="tr_yellow" >
+			<td colspan="5" ><b>Category: Difficult</b></td>
+		</tr>
+		<tr>
+			<td colspan="2" ><b>1 Programmer's Cup <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" /> = <code>5pts</b></td>
+			<td colspan="1" ></td>
+			<td colspan="2" >
+			</td>
+		</tr>
+		<tr>
+			<td><b>Level</b></td>
+			<td colspan="5" ><b>Top 5 Users</b></td>
+		</tr>
+		<?php foreach( $dificult_level_top_students as $problem ): ?>
+			<tr>
+				<td ><b>{{$problem->problem_id - 5}}</b></td>
+				<?php if( ! count( $problem->top_students ) ) { echo "<td colspan='5' >No students</td>"; } ?>
+				<?php foreach ( $problem->top_students as $students ): ?> 
+					<td>
+						
+
+						<table>
+							<tr >
+								<td rowspan="4" >
+									<img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=50" class="img-circle">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<kbd class="difficult" >{{$students->full_name}}</kbd>
 								</td>
 							</tr>
 							<tr>
