@@ -48,7 +48,7 @@
 	        	<img src="{{$root_path}}img/CFG_logo.png" />
 	        </div><!--end of logo_box-->
         
-        </div><!--end of main_header-->
+    </div><!--end of main_header-->
 
 
 	<!-- NAV BAR -->
@@ -357,6 +357,8 @@
 	<div id="dialog-confirm">
 		You are attempting to answer Category <b id="cat_name" >Easy</b> Level <b id="level" ></b>.
 	</div>
+
+
 
 </body>
 </html>

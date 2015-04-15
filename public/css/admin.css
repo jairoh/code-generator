@@ -1,11 +1,9 @@
-* {
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-}
 .problem_list {
 	margin: 20px auto;
 	width: 1000px;
 	text-align: center;
 	border: 0;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 .problem_list table {
 	text-align: left;

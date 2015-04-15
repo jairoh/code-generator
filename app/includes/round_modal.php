@@ -1,4 +1,9 @@
-    
+<style>
+    * {
+        font-size: 13px;
+        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    } 
+</style>
 
     <div id="statement_box" class="popup_box">
         <table class="popup_table">

@@ -1,3 +1,13 @@
+#content_box {
+  margin: 20px auto;
+  height: 100px;
+}
+#left_side_bar {
+  height: 400px;
+}
+#tags_box {
+  height: 600px;
+}
 #dock_box {
 	height: 600px;
 }
@@ -8,7 +18,7 @@
 #generated_code_box {
   border: solid 1px #CCC;
   float: right;
-  width: 37.9%;
+  //width: 37.9%;
   height: 299px;
   overflow: auto;
   background: #000;

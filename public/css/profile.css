@@ -1,9 +1,5 @@
-* {
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-}
 .stages_comp_box {
 	background: #fff;
-
 } 
 
 /*Caregory progress boxes*/
@@ -13,6 +9,7 @@
 
 .legend_progress_box table {
 	width: 350px;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 .legend_progress_box table td {
 	width: 50%;

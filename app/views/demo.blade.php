@@ -41,9 +41,9 @@
     <!-- END GRAMMAR SCRIPTS -->
 
     <!-- OWN CSS AND JS-->
-    <link rel="stylesheet" type="text/css" href="{{$root_path}}css/round.css">
+    <link rel="stylesheet" href="{{$root_path}}css/round.css">
     
-    <link href="{{$root_path}}css/demo.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{$root_path}}css/demo.css" >
     <script type="text/javascript" src="{{$root_path}}js/demo.js" ></script>
 @stop
 
@@ -64,51 +64,54 @@
   </div>
 
 
+  <!-- CONTENT BOX -->
+  <div id="content_box">
 
-    <div id="left_side_bar">
+      <div id="left_side_bar">
 
-       <center>
-          <div onclick="javascript:$('#dock_box').html('');" id="clear_box">
-              <img src="{{$root_path}}img/trash_can.png" /><span>Clear all</span>
-          </div><!--end of clear_box-->
-      </center>
-
-
-      <center>
-      <div id="trash_box">
-          <img class="trash_icon" src="{{$root_path}}img/trash_can.png">
-      </div><!--end of trash_box-->
-      </center>
-
-      <div id="tags_box" class="">
-
-          <div id="variable_box" class="droptrue"></div> <!--end of variable_box-->
-          <div id="print_box" class="droptrue"> </div><!--end of print_box-->
-          <div id="if_box" class="droptrue"></div><!--end of if_box-->
-          <div id="else_box" class="droptrue"></div><!--end of else_box-->
-          <div id="else_if_box" class="droptrue"></div><!--end of else_if_box-->
-          <div id="while_box" class="droptrue"></div><!--end of while_box-->
-          <div id="dowhile_box" class="droptrue"></div><!--end of dowhile_box-->
-          <div id="forloop_box" class="droptrue"></div><!--end of forloop_box-->
-          <div id="switch_case_box" class="droptrue"></div><!--end of switch_case_box-->
-
-      </div><!--end of tags_box-->
-  </div><!--end of left_side_bar-->
+         <center>
+            <div onclick="javascript:$('#dock_box').html('');" id="clear_box">
+                <img src="{{$root_path}}img/trash_can.png" /><span>Clear all</span>
+            </div><!--end of clear_box-->
+        </center>
 
 
-  <div id="dock_box" class="droptrue"></div><!--end of dock_box-->
+        <center>
+        <div id="trash_box">
+            <img class="trash_icon" src="{{$root_path}}img/trash_can.png">
+        </div><!--end of trash_box-->
+        </center>
 
-  <div id="generated_code_box">
-    <div id="generate_here"></div>
-  </div><!--end of generated_code_box-->
+        <div id="tags_box" class="">
+
+            <div id="variable_box" class="droptrue"></div> <!--end of variable_box-->
+            <div id="print_box" class="droptrue"> </div><!--end of print_box-->
+            <div id="if_box" class="droptrue"></div><!--end of if_box-->
+            <div id="else_box" class="droptrue"></div><!--end of else_box-->
+            <div id="else_if_box" class="droptrue"></div><!--end of else_if_box-->
+            <div id="while_box" class="droptrue"></div><!--end of while_box-->
+            <div id="dowhile_box" class="droptrue"></div><!--end of dowhile_box-->
+            <div id="forloop_box" class="droptrue"></div><!--end of forloop_box-->
+            <div id="switch_case_box" class="droptrue"></div><!--end of switch_case_box-->
+
+        </div><!--end of tags_box-->
+    </div><!--end of left_side_bar-->
 
 
-  <button type="button" id="generate_button" class="hard generate_btn" onClick="generateCode(); executeCode();" ><a>Execute Code</a><img src="{{$root_path}}img/play.png" /></button>
+    <div id="dock_box" class="droptrue"></div><!--end of dock_box-->
 
-  <div id="output_box"></div><!--end of output_box-->
+    <div id="generated_code_box">
+      <div id="generate_here"></div>
+    </div><!--end of generated_code_box-->
 
-  <?php include(app_path().'/includes/round_modal.php'); ?>
 
+    <button type="button" id="generate_button" class="hard generate_btn" onClick="generateCode(); executeCode();" ><a>Execute Code</a><img src="{{$root_path}}img/play.png" /></button>
 
+    <div id="output_box"></div><!--end of output_box-->
+
+    <?php include(app_path().'/includes/round_modal.php'); ?>
+  
+  </div>
+  <!-- END CONTENT BOX -->
 
 @stop

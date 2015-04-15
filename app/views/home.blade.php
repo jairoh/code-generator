@@ -18,8 +18,7 @@
 </head>
 <body>
 
-	<!-- div for fixed header  -->
-<div id="head" >
+
 	<link rel="stylesheet" href="{{$root_path}}css/default.css" />
 	<!-- header_holder-->
 	<div id="header_holder">
@@ -28,10 +27,7 @@
 	    <div id="logo_box">
 	    	<img src="{{$root_path}}img/CFG_logo.png" />
 	    </div><!--end of logo_box-->
-	    
-	    	<table id="login_table">
-	        
-	        </table>
+	   
 	    </div><!--end of main_header-->
 	</div><!--end of header_holder-->
 
@@ -330,7 +326,6 @@
 		</tr>
 	</table>
 
-</div>
 
 
 </body>

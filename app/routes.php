@@ -12,7 +12,7 @@
 */
 
 Route::group( array( 'prefix' => '/' ), function () {
-	Route::get( '/', 'HomeController@direction' );
+	Route::get( '/', 'HomeController@font_page' );
 	Route::get( '/home', 'HomeController@font_page' );
 
 	Route::get( '/demo', 'DemoController@display' );
