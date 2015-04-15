@@ -23,10 +23,10 @@ function check_var_redundancy ( str, linenum, array ) {
 //check if the variables in the condition/repetition																																
 function check_if_var_has_been_declared ( str, linenum, array ) { 
 	//get the parameter line
-	parameter_line = str.replace( /^(?:System\.out\.print(?:ln)?|if|else if|switch|for|(?:}\s*)?while)\s*\(([^)]*)\)(?:;|\s*\{)|(case\s+[^:]):$/, "$1" ).trim();
+	parameter_line = str.replace( /^(?:System\.out\.print(?:ln)?|if|else if|switch|for|(?:\}\s*)?while)\s*\(([^)]*)\)(?:;|\s*\{)|(case\s+[^:]):$/, "$1" ).trim();
 		
-	//replace everything in the forloop condition apart from the user input
-	parameter_line = parameter_line.replace( /(int\s*x\s*=\s*0;\s*x\s*<\s*)|(;\s*x\+\+);/g, "" );
+	//replace everything in the forloop condition apart from $2 and $3 => (int a = $2; a < $3; a++) 
+	parameter_line = parameter_line.replace( /^int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2})$/, "$2 $3" );
 
 	//put all the identifiers in an array
 	identifier_arr = parameter_line.replace( /(".+"|'.+'|&quot;.+&quot;)/g, "" ).match( /[A-z][A-z0-9]*/g );
@@ -76,7 +76,7 @@ function if_variable_found_declared_in_prev_lines ( identifier, linenum, array )
 function check_identifiers_and_constant_match ( str, linenum, array ) {
 
 	//get the parameter line
-	parameter_line = str.replace( /^(?:System\.out\.print(?:ln)?|if|else if|switch|(?:}\s*)?while)\s*\(([^)]*)\)(?:;|\s*\{)|(case\s+[^:]):$/, "$1" ).trim();
+	parameter_line = str.replace( /^(?:System\.out\.print(?:ln)?|if|else if|switch|for|(?:\}\s*)?while)\s*\(([^)]*)\)(?:;|\s*\{)|(case\s+[^:]):$/, "$1" ).trim();
 	parameter_line = parameter_line.replace( /&quot;/g, '"' );
 
 	//put all the operands in an array
@@ -157,13 +157,15 @@ function get_indentifier_data_type ( identifier, linenum, array ) {
 
 function are_operands_accessible ( str, linenum, array ) {
 	//get the parameter line
-	parameter_line = str.replace( /^(?:System\.out\.print(?:ln)?|if|else if|switch|for|(?:}\s*)?while)\s*\(([^)]*)\)(?:;|\s*\{)|(case\s+[^:]):$/, "$1" ).trim();
+	parameter_line = str.replace( /^(?:System\.out\.print(?:ln)?|if|else if|switch|for|(?:\}\s*)?while)\s*\(([^)]*)\)(?:;|\s*\{)|(case\s+[^:]):$/, "$1" ).trim();
 		
-	//replace everything in the forloop condition apart from the user input
-	parameter_line = parameter_line.replace( /(int\s*x\s*=\s*0;\s*x\s*<\s*)|(;\s*x\+\+);/g, "" );
+	//replace everything in the forloop condition apart from $2 and $3 => (int a = $2; a < $3; a++) 
+	parameter_line = parameter_line.replace( /^int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2})$/, "$2 $3" );
 
 	//put all the identifiers in an array
-	identifier_arr = parameter_line.replace( /(".+"|'.+'|&quot;.+&quot;)/g, "" ).match( /[A-z][A-z0-9]*/g );
+	identifier_arr = parameter_line.replace( /(".+"|'.+'|&quot;.+&quot;|true|false)/g, "" ).match( /[A-z][A-z0-9]*/g );
+
+	console.log( " = " + identifier_arr );
 
 	var n = ( isNaN( identifier_arr ) )? identifier_arr.length : 0;
 	
@@ -270,4 +272,56 @@ function check_case_and_switch_data_types_match ( statement, linenum, array ) {
 
 	return true;
 
+}
+
+//check if the declared integer var in the loop is redundant
+function check_forloop_var_dec_unique ( str, linenum, array ) {
+	loop_int_var = str.replace( /^for\s*\(\s*int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2})\s*\)\s*{$/, '$1' );
+
+	//loop through the previous values
+	for ( var i = 0; i < linenum; i++ ) {
+		var prev_value = array [ i ].replace( /^\b(?:int|double|float|String|char|boolean)\b\s+\b([A-z0-9]+)?\b.+$/, "$1" );
+		
+
+		if ( loop_int_var == prev_value ) {
+			line_error = "Variable '" + loop_int_var + "' on line number " + ( parseInt( linenum ) + 1 ) + " already in use.";
+			return false;
+		}																			
+	}
+
+	return true;
+}
+
+//check if the identifiers/constants used in the foor loop are integers
+function check_identifiers_and_constants_integer ( str, linenum, array ) {
+	//get the parameter line
+	parameter_line = str.replace( /^(?:System\.out\.print(?:ln)?|if|else if|switch|for|(?:\}\s*)?while)\s*\(([^)]*)\)(?:;|\s*\{)|(case\s+[^:]):$/, "$1" ).trim();
+		
+	//replace everything in the forloop condition apart from $2 and $3 => (int a = $2; a < $3; a++) 
+	input_values = parameter_line.replace( /^int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2})$/, "$2 $3" );
+
+	//put the input values in an array
+	operands = input_values.match( /([A-z][A-z0-9]?|[0-9]{1,9})/g );
+
+	for ( var i in operands ) {
+		var operand = operands [ i ];
+
+		//constant
+		if ( operand.match( /[0-9]{1,9}/ ) ) {
+			data_type = get_constant_data_type ( operand );
+		
+		//identifier
+		} else if ( operand.match( /[A-z][A-z0-9]?/ ) ) {
+			data_type = get_indentifier_data_type ( operand, linenum, array );
+		}
+
+		if ( data_type != 'int' ) {
+			line_error = "Invalid data type of operand '" + operand + "' on line number " + ( parseInt( linenum ) + 1 ) + ". Found: " + data_type + ". Required: int.";
+			return false;
+		}
+
+	}
+
+
+	return true;
 }

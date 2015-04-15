@@ -64,25 +64,15 @@ function validate_operands ( statement, linenum ) {
 	//for foorloop, check if the input length is an integer
 	if ( statement.match( /^for/ ) ) {
 		
-		//get the parameter line
-		parameter_line = statement.replace( /^for\s*\(([^)]*)\)(?:;|\s*\{)|(case\s+[^:]):$/, "$1" ).trim();
-		parameter_line = parameter_line.replace( /&quot;/g, '"' );
-
-		console.log( "parameter line === " + parameter_line );
-
-		//replace everything in the forloop condition apart from the user input
-		n = parameter_line.replace( /^(?:int\s*(.)\s*=\s*0;\s*\1\s*[><=!]+\s*)|(;\s*x\+\+)$/g, "" ).trim();
-
-		//check if the length is an integer
-		if ( ! n.match( /^[0-9]{1,9}$/ ) ) {
-			line_error = "Cannot identify '" + n + "' length of forloop on line number " + ( parseInt( linenum ) + 1 ) + ".";
+		if ( ! statement.match( /^for\s*\(\s*int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2})\s*\)\s*{$/ ) ) {
+			line_error = "Invalid parameters in for-loop statement on line number " + ( parseInt( linenum ) + 1 ) + ".";
 			return false;
 		}
 
 	} else {
 
 		//get the parameter line
-		parameter_line = statement.replace( /^(?:System\.out\.print(?:ln)?|if|else if|switch|(?:}\s*)?while)\s*\(([^)]*)\)(?:;|\s*\{)|(case\s+[^:]):$/, "$1" ).trim();
+		parameter_line = statement.replace( /^(?:System\.out\.print(?:ln)?|if|else if|switch|(?:\}\s*)?while)\s*\(([^)]*)\)(?:;|\s*\{)|(case\s+[^:]):$/, "$1" ).trim();
 		parameter_line = parameter_line.replace( /&quot;/g, '"' );
 
 		//put all the operands in an array
@@ -180,6 +170,22 @@ function type_check_statements ( statement, linenum, array ) {
 			if ( check_case_and_switch_data_types_match( statement, linenum, array ) ) return true;
 		}
 
+		return false;
+	}
+	//check for loop
+	else if ( statement.match( /^for/ ) ) {
+		
+		//check if the declared integer var in the loop is redundant
+		if ( check_forloop_var_dec_unique ( statement, linenum, array ) ) {
+			//check variable parameters if they have been declared or initialized
+			if ( check_if_var_has_been_declared ( statement, linenum, array ) ) {
+				//check operands accessible
+				if ( are_operands_accessible ( statement, linenum, array ) ) {
+					//check if the identifiers/constants used in the foor loop are integers
+					if ( check_identifiers_and_constants_integer ( statement, linenum, array ) ) return true;
+				}
+			}
+		}
 		return false;
 	}
 
