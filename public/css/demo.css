@@ -1,9 +1,9 @@
-#content_box {
-  margin: 20px auto;
-  height: 100px;
+#left_side_bar, #tags_box, #dock_box, #generated_code_box {
+  margin-top: 20px;
 }
+
 #left_side_bar {
-  height: 400px;
+  height: 600px;
 }
 #tags_box {
   height: 600px;

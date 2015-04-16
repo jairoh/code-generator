@@ -63,10 +63,6 @@
     </ul>
   </div>
 
-
-  <!-- CONTENT BOX -->
-  <div id="content_box">
-
       <div id="left_side_bar">
 
          <center>
@@ -111,7 +107,6 @@
 
     <?php include(app_path().'/includes/round_modal.php'); ?>
   
-  </div>
-  <!-- END CONTENT BOX -->
+
 
 @stop

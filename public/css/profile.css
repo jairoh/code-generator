@@ -1,6 +1,9 @@
 .stages_comp_box {
 	background: #fff;
 } 
+.panel {
+	margin-top: 20px;
+}
 
 /*Caregory progress boxes*/
 .category_progress_box .progress-bar, .legend_progress_box .progress-bar {

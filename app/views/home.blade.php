@@ -189,7 +189,7 @@
 			<td>
 				<h3><span class="while">Contributors</span></h3>
 				
-				<table>
+			<!-- 	<table>
 					<tr>
 						<td><div class="circular"><img src="{{$root_path}}img/jairoh.jpg"></div></td>
 						<td><div class="circular"><img src="{{$root_path}}img/elyza.jpg"></div></td>
@@ -198,7 +198,7 @@
 						<td><div class="circular"><img src="{{$root_path}}img/jomar.jpg"></div></td>
 						<td><div class="circular"><img src="{{$root_path}}img/kirlven.jpg"></div></td>
 					</tr>
-				</table>
+				</table> -->
 
 			</td>
 
@@ -437,6 +437,20 @@
 		</tr>
 	</table>
 
+
+	<div id="footer_holder">
+		<div id="main_footer">
+			<p>
+				BSCS IV Thesis Project <br>
+				College of Computer Studies <br>
+				Foundation University <br>
+				E-mail: <a href="mailto:fucs2014@gmail.com">fucs2014@gmail.com</a> <br>
+				-- <br>
+				All Rights Reserved. <br>
+				© 2014-2015 Thesis Project
+			</p>
+		</div><!--end of main_footer-->
+    </div><!--end of footer_folder-->
 
 
 </body>

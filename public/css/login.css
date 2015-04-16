@@ -7,12 +7,14 @@ body {
 }
 
 #header_holder, #footer_holder {
-	
+	padding: 0px;
+	margin: 0px;
+}
+#toolbar #nav {
+	padding: 0px;
 }
 
-
 #main_header {
-	//border:solid 1px #FFF;
 	width:980px;
 	min-height:120px;
 	margin:auto;
@@ -36,35 +38,35 @@ body {
 
 #login_table tr td {
 	padding: 3px;
-	color: #31dd40;
+	color: #3BC62C;
 	font-weight: bold;
 }
 
 #content_holder {
-	background:#CCC;
+	//border: 1px solid #000;
 	display:table;
 	margin:auto;
-	width:100%;
+	width:1200px;
 	height:100%;
-	background-image:url(/img/bkg.jpg);
+	//background-image:url(/img/bkg.jpg);
+	margin: 20px auto;
 }
 
 #main_content {
 	//border:solid 1px green;
 	width:980px;
-	margin:auto;
+	margin: 20px auto;
 	min-height:450px;
 	display:table;	
 	
 }
 
 #left_content {
-	//border:solid 1px red;	
+	border:solid 5px #555;	
 	float:left;
 }
 
 #slider_holder {
-	background:rgba(0,0,0,0.5);	
 	min-width:500px;
 	min-height:300px;
 	margin:20px;
@@ -72,9 +74,11 @@ body {
 }
 
 #right_content {
-	//border:solid 1px #000;
+	border:solid 5px #555;
+	background: #E6F599;
+	border-radius: 100px 0 0 0;
 	float:right;	
-	padding-top:20px;
+	padding: 20px;
 }
 
 #signup_text {
@@ -83,7 +87,7 @@ body {
 	margin:0px;
 	font:message-box;
 	font-size:30px;
-	color:#a0f74a;
+	color:#3BC62C;
 	font-weight:bold;
 	
 }
@@ -94,12 +98,11 @@ body {
 	font-size:14px;
 	margin-top:5px;
 	margin-bottom:5px;
-	color:#4af79f;
+	color:#3498db;
 	font-weight:bold;
 }
 
 #signup_table {
-	background:rgba(0,0,0,0.5);
 	width: 300px;
 	height: 200px;
 
@@ -121,7 +124,7 @@ body {
 }
 
 #maleRB {
-	color: #4af79f;
+	color: #3498db;
 }
 #femaleRB {
 	color: #f4726d;

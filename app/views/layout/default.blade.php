@@ -29,10 +29,7 @@
 	@yield( 'content' )
 
 
-	<div id="footer_holder">
-    	<div id="main_footer">
-        </div><!--end of main_footer-->
-    </div><!--end of footer_folder-->
+
 
      
 	

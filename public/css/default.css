@@ -14,7 +14,7 @@ body {
 }
 
 #header_holder, #footer_holder {
-
+	clear: both;
 }
 #header_holder {
 	//border:solid 1px #000;
@@ -55,4 +55,12 @@ body {
 
 #maleRB, #femaleRB {
 	font-weight: normal;
+}
+
+#footer_holder {
+	clear: both;
+	border-top: 3px solid #555;
+	width: 1200px;
+	margin: 100px auto 50px;
+	padding: 20px;
 }

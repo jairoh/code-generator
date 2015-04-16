@@ -65,112 +65,105 @@
 
 
 
-<!-- <ps>Print statements</ps>
-<vs>Variables</vs>
-<cond>Conditional statments</cond>
-<ws>While statements</ws>
-<dws>Do-while statements</dws>
-<fls>For-loop statements</fls>
-<ss>Switch statements</ss> -->
+    <table class="problem_table" >
+        <tr>
+             <td colspan="2" ><kbd class="no_equivalence" >{{$problem_category_descrp}}: Level {{$level}}</kbd></td>
+        </tr>
+        <tr>
+            <td colspan="2" >
+                <div id="question_box">
+                    <kbd class= <?= ( $problem_category_id == 1 )? 'easy' : ( ( $problem_category_id == 2 )? 'average' : 'hard' ); ?> >Problem Description:</kbd> 
+                    <blockquote><a><?= $problem_description ?><a></blockquote>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="problem_status_box" ><kbd class=<?= ( $problem_category_id == 1 )? 'easy' : ( ( $problem_category_id == 2 )? 'average' : 'hard' ); ?> >Problem Status:</kbd> <b></b></div>
+            </td>
+            <td>
+                <b>1 Programmer's Cup <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" /> = <code>5pts</code></b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="attempts_box"><kbd class= <?= ( $problem_category_id == 1 )? 'easy' : ( ( $problem_category_id == 2 )? 'average' : 'hard' ); ?> >No. of Attempts:</kbd> <b class="no_attempts" ></b></div>
+            </td>
+            <td>
+                <kbd class="no_equivalence" >Attempt(s) Points Equivalence:</kbd>
+                <code>1</code> = 
+                <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" /> 
+                <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" /> 
+                <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" /> 
+                <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
 
+                <code>2</code> = 
+                <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
+                <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
+                <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
 
-<table class="problem_table" >
-    <tr>
-         <td colspan="2" ><kbd class="no_equivalence" >{{$problem_category_descrp}}: Level {{$level}}</kbd></td>
-    </tr>
-    <tr>
-        <td colspan="2" >
-            <div id="question_box">
-                <kbd class= <?= ( $problem_category_id == 1 )? 'easy' : ( ( $problem_category_id == 2 )? 'average' : 'hard' ); ?> >Problem Description:</kbd> 
-                <blockquote><a><?= $problem_description ?><a></blockquote>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div id="problem_status_box" ><kbd class=<?= ( $problem_category_id == 1 )? 'easy' : ( ( $problem_category_id == 2 )? 'average' : 'hard' ); ?> >Problem Status:</kbd> <b></b></div>
-        </td>
-        <td>
-            <b>1 Programmer's Cup <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" /> = <code>5pts</code></b>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div id="attempts_box"><kbd class= <?= ( $problem_category_id == 1 )? 'easy' : ( ( $problem_category_id == 2 )? 'average' : 'hard' ); ?> >No. of Attempts:</kbd> <b class="no_attempts" ></b></div>
-        </td>
-        <td>
-            <kbd class="no_equivalence" >Attempt(s) Points Equivalence:</kbd>
-            <code>1</code> = 
-            <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" /> 
-            <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" /> 
-            <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" /> 
-            <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
+                <code>3</code> = 
+                <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
+                <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
 
-            <code>2</code> = 
-            <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
-            <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
-            <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
+                <code>4</code> = 
+                <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
+               
 
-            <code>3</code> = 
-            <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
-            <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
-
-            <code>4</code> = 
-            <img class="programmers_trophy" src="{{$root_path}}img/programmers_trophy.png" title="Programmer's Cup" />
-           
-
-        </td>
-    </tr>
-</table>
+            </td>
+        </tr>
+    </table>
 
 
 
-<div id="left_side_bar">
+    <div id="left_side_bar">
 
-     <center>
-        <div onclick="javascript:$('#dock_box').html('');" id="clear_box">
-            <img src="{{$root_path}}img/trash_can.png" /><span>Clear all</span>
-        </div><!--end of clear_box-->
-    </center>
-
-
-    <center>
-    <div id="trash_box">
-        <img class="trash_icon" src="{{$root_path}}img/trash_can.png">
-    </div><!--end of trash_box-->
-    </center>
-
-    <div id="tags_box" class="">
-
-        <div id="variable_box" class="droptrue"></div> <!--end of variable_box-->
-        <div id="print_box" class="droptrue"> </div><!--end of print_box-->
-        <div id="if_box" class="droptrue"></div><!--end of if_box-->
-        <div id="else_box" class="droptrue"></div><!--end of else_box-->
-        <div id="else_if_box" class="droptrue"></div><!--end of else_if_box-->
-        <div id="while_box" class="droptrue"></div><!--end of while_box-->
-        <div id="dowhile_box" class="droptrue"></div><!--end of dowhile_box-->
-        <div id="forloop_box" class="droptrue"></div><!--end of forloop_box-->
-        <div id="switch_case_box" class="droptrue"></div><!--end of switch_case_box-->
-
-    </div><!--end of tags_box-->
-</div><!--end of left_side_bar-->
-
-<input type="hidden" id="user_id" value="<?= $user_id; ?>" />
-<input type="hidden" id="prob_id" value="<?= $problem_id; ?>" />
-<input type="hidden" id="e_structure" value="<?= $expected_structure; ?>" />
-<input type="hidden" id="e_output" value="<?= $expected_output; ?>" />
-<input type="hidden" id="problem_category_id" value="{{$problem_category_id}}" />
-
-<div id="dock_box" class="droptrue"></div><!--end of dock_box-->
-
-<div id="generated_code_box">
-	<div id="generate_here"></div>
-</div><!--end of generated_code_box-->
+         <center>
+            <div onclick="javascript:$('#dock_box').html('');" id="clear_box">
+                <img src="{{$root_path}}img/trash_can.png" /><span>Clear all</span>
+            </div><!--end of clear_box-->
+        </center>
 
 
-<button type="button" id="generate_button" class="<?= ( $problem_category_id == 1 )? 'easy' : ( ( $problem_category_id == 2 )? 'average' : 'hard' ); ?> generate_btn" onClick="generateCode(); executeCode(); show_problem_status();" ><a>Execute Code</a><img src="{{$root_path}}img/play.png" /></button>
+        <center>
+        <div id="trash_box">
+            <img class="trash_icon" src="{{$root_path}}img/trash_can.png">
+        </div><!--end of trash_box-->
+        </center>
 
-<div id="output_box"></div><!--end of output_box-->
+        <div id="tags_box" class="">
+
+            <div id="variable_box" class="droptrue"></div> <!--end of variable_box-->
+            <div id="print_box" class="droptrue"> </div><!--end of print_box-->
+            <div id="if_box" class="droptrue"></div><!--end of if_box-->
+            <div id="else_box" class="droptrue"></div><!--end of else_box-->
+            <div id="else_if_box" class="droptrue"></div><!--end of else_if_box-->
+            <div id="while_box" class="droptrue"></div><!--end of while_box-->
+            <div id="dowhile_box" class="droptrue"></div><!--end of dowhile_box-->
+            <div id="forloop_box" class="droptrue"></div><!--end of forloop_box-->
+            <div id="switch_case_box" class="droptrue"></div><!--end of switch_case_box-->
+
+        </div><!--end of tags_box-->
+    </div><!--end of left_side_bar-->
+
+    <input type="hidden" id="user_id" value="<?= $user_id; ?>" />
+    <input type="hidden" id="prob_id" value="<?= $problem_id; ?>" />
+    <input type="hidden" id="e_structure" value="<?= $expected_structure; ?>" />
+    <input type="hidden" id="e_output" value="<?= $expected_output; ?>" />
+    <input type="hidden" id="problem_category_id" value="{{$problem_category_id}}" />
+
+    <div id="dock_box" class="droptrue"></div><!--end of dock_box-->
+
+    <div id="generated_code_box">
+    	<div id="generate_here"></div>
+    </div><!--end of generated_code_box-->
+
+
+    <button type="button" id="generate_button" class="<?= ( $problem_category_id == 1 )? 'easy' : ( ( $problem_category_id == 2 )? 'average' : 'hard' ); ?> generate_btn" onClick="generateCode(); executeCode(); show_problem_status();" ><a>Execute Code</a><img src="{{$root_path}}img/play.png" /></button>
+
+    <div id="output_box"></div><!--end of output_box-->
+    
+
 
 <?php include(app_path().'/includes/round_modal.php'); ?>
 

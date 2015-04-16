@@ -345,5 +345,18 @@
     You are attempting to answer Category <b id="cat_name" >Easy</b> Level <b id="level" ></b>.
   </div>
 
+    <div id="footer_holder">
+    <div id="main_footer">
+      <p>
+        BSCS IV Thesis Project <br>
+        College of Computer Studies <br>
+        Foundation University <br>
+        E-mail: <a href="mailto:fucs2014@gmail.com">fucs2014@gmail.com</a> <br>
+        -- <br>
+        All Rights Reserved. <br>
+        © 2014-2015 Thesis Project
+      </p>
+    </div><!--end of main_footer-->
+    </div><!--end of footer_folder-->
 
 @stop

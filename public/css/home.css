@@ -111,3 +111,10 @@
 	height: 100px;
 	border-radius: 150px;
 }
+
+#footer_holder {
+	border-top: 3px solid #555;
+	width: 1200px;
+	margin: 100px auto 50px;
+	padding: 20px;
+}
