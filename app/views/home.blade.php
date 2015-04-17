@@ -172,33 +172,41 @@
 
 
 			<td>
-				<h3 class="case" >What is this all about?</h3>
-
-				A web-based application that guides students in learning basic java programming.
-
-				<br><br>
-				There are predefined problems designed to allow the users to use branching statements (e.g. <span class="cond">if</span>-<span class="cond">else</span>, nested <span class="cond">if</span>-<span class="cond">else</span>, <span class="switch">switch</span>) and loop statements (e.g. <span class="while">while</span>, <span class="do_while">do-while</span>, <span class="for">for</span>). Tags and identifiers used in constructing the program are all predefined. A code fragment is generated based on the tags compiled by the user thus, changes to the code fragment is not permitted unless the tags are modified.
-			</td>
-			
-
-			<td>
-				<h3><span class="var">Problems</span>, <span class="switch"><i>what do you mean?</i></span></h3>
-				There are three (3) categories ― <span class="easy">Easy</span>, <span class="ave">Average</span>, and <span class="diff">Difficult</span>. Each category has five (5) levels that must be solved correctly in order for the user to proceed to the next level. One programmer’s cup is equivalent to five (5) points and first attempt is equivalent to four (4) programmer’s cup. Second attempt is equivalent to three (3) programmer’s cup so on until the fourth attempt which is equivalent to only one (1) programmer’s cup. Further attempts has no longer programmer’s cup but the problem has to be solved to proceed.
-			</td>
-			
-			<td>
-				<h3><span class="while">Contributors</span></h3>
 				
-			<!-- 	<table>
-					<tr>
-						<td><div class="circular"><img src="{{$root_path}}img/jairoh.jpg"></div></td>
-						<td><div class="circular"><img src="{{$root_path}}img/elyza.jpg"></div></td>
-					</tr>
-					<tr>
-						<td><div class="circular"><img src="{{$root_path}}img/jomar.jpg"></div></td>
-						<td><div class="circular"><img src="{{$root_path}}img/kirlven.jpg"></div></td>
-					</tr>
-				</table> -->
+				<div class="b1">
+					<h3 class="case" >What is this all about?</h3>
+
+					A web-based application that guides students in learning basic java programming.
+
+					<br><br>
+					There are predefined problems designed to allow the users to use branching statements (e.g. <span class="cond">if</span>-<span class="cond">else</span>, nested <span class="cond">if</span>-<span class="cond">else</span>, <span class="switch">switch</span>) and loop statements (e.g. <span class="while">while</span>, <span class="do_while">do-while</span>, <span class="for">for</span>). Tags and identifiers used in constructing the program are all predefined. A code fragment is generated based on the tags compiled by the user thus, changes to the code fragment is not permitted unless the tags are modified.
+				</div>
+
+			</td>
+			
+
+			<td>
+				<div class="b2">
+					<h3><span class="var">Problems</span>, <span class="switch"><i>what do you mean?</i></span></h3>
+					There are three (3) categories ― <span class="easy">Easy</span>, <span class="ave">Average</span>, and <span class="diff">Difficult</span>. Each category has five (5) levels that must be solved correctly in order for the user to proceed to the next level. One programmer’s cup is equivalent to five (5) points and first attempt is equivalent to four (4) programmer’s cup. Second attempt is equivalent to three (3) programmer’s cup so on until the fourth attempt which is equivalent to only one (1) programmer’s cup. Further attempts has no longer programmer’s cup but the problem has to be solved to proceed.
+				</div>
+			</td>
+			
+			<td>
+				<div class="b3">
+					<h3><span class="while">Contributors</span></h3>
+					
+				<!-- 	<table>
+						<tr>
+							<td><div class="circular"><img src="{{$root_path}}img/jairoh.jpg"></div></td>
+							<td><div class="circular"><img src="{{$root_path}}img/elyza.jpg"></div></td>
+						</tr>
+						<tr>
+							<td><div class="circular"><img src="{{$root_path}}img/jomar.jpg"></div></td>
+							<td><div class="circular"><img src="{{$root_path}}img/kirlven.jpg"></div></td>
+						</tr>
+					</table> -->
+				</div>
 
 			</td>
 

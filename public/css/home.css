@@ -15,6 +15,14 @@
 	vertical-align: top;
 }
 
+.b1, .b2, .b3 {
+	border: solid 5px #555;
+	padding: 20px;
+	height: 350px;
+	border-radius: 0 50px 0 0;
+}
+
+
 #easy_box, #ave_box, #diff_box {
 	font-weight: bold;
   	color: #fff;

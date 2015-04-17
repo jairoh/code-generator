@@ -63,11 +63,13 @@ function validate_operands ( statement, linenum ) {
 
 	//for foorloop, check if the input length is an integer
 	if ( statement.match( /^for/ ) ) {
-		
+
 		if ( ! statement.match( /^for\s*\(\s*int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2})\s*\)\s*{$/ ) ) {
 			line_error = "Invalid parameters in for-loop statement on line number " + ( parseInt( linenum ) + 1 ) + ".";
 			return false;
 		}
+
+
 
 	} else {
 

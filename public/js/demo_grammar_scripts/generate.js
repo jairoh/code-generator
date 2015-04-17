@@ -54,6 +54,7 @@ function generateCode() {
 	//filtered tags
 	var input_arr_filtered = filterTags( input_arr );
 
+
 	//show output with prettyPrint
 	fragment = htmlEntitiesToSymbol( translateTags( input_arr_filtered ) );
 
@@ -128,9 +129,9 @@ function showResult ( CORS_request_made ) {
 		if ( parseInt( n_of_newlines ) > 10 ) {
 			for ( var x = 0; x < 10; x++ ) {
 				output_limited += execution_output [ x ];
-				console.log( x + " = " + execution_output [ x ] );
+				//console.log( x + " = " + execution_output [ x ] );
 			}
-			output_limited += "..."; 
+			//output_limited += "..."; 
 		} else {
 			output_limited = execution_output;
 			if ( execution_output.length > 100 ) 
