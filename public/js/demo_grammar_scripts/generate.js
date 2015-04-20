@@ -13,6 +13,7 @@ var problem_requirements_arr = {
 var all_requirements_met = true;
 var fragment = "";
 var line_error = "";
+var code_validity = true;
 
 function clearValues () {
 	problem_requirements_arr = {
@@ -126,8 +127,8 @@ function showResult ( CORS_request_made ) {
 		var n_of_newlines = execution_output.split( /\n/ ).length;
 
 		var output_limited = "";
-		if ( parseInt( n_of_newlines ) > 10 ) {
-			for ( var x = 0; x < 10; x++ ) {
+		if ( parseInt( n_of_newlines ) > 15 ) {
+			for ( var x = 0; x < 15; x++ ) {
 				output_limited += execution_output [ x ];
 				//console.log( x + " = " + execution_output [ x ] );
 			}
@@ -148,7 +149,7 @@ function showResult ( CORS_request_made ) {
 		);
 
 		//check grammar	
-		if ( ! grammmar_check ( fragment.split( "\n" ) ) ) $( '#output_box pre' ).append( "\n<b class='req' >Compiler Error</b> : <b class='error' >" + get_grammar_error() + "</b>" );
+		if ( ! code_validity ) $( '#output_box pre' ).append( "\n<b class='req' >Compiler Error</b> : <b class='error' >" + get_grammar_error() + "</b>" );
 	} else {
 		//display output
 		$( '#output_box' ).html( "<b class='req' >Connection Error</b> : <b class='error' >Connection lost. Try checking you internet connection and reload the page.</b>" );

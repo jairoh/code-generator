@@ -11,6 +11,7 @@ var generated_codes_arr = [
 	'}' 
 ];
 var line_error = "";
+var code_validity = true;
 
 $( document ).ready( function () {
 	//if ( ! lexical_anaylize( generated_codes_arr ) ) return;

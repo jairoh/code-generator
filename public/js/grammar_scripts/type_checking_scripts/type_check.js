@@ -31,6 +31,7 @@ function check_if_var_has_been_declared ( str, linenum, array ) {
 	//put all the identifiers in an array
 	identifier_arr = parameter_line.replace( /(".+"|'.+'|&quot;.+&quot;)/g, "" ).match( /[A-z][A-z0-9]*/g );
 
+	console.log( "Line " + linenum + " = " + parameter_line );
 
 	var n = ( isNaN( identifier_arr ) )? identifier_arr.length : 0;
 
@@ -214,7 +215,7 @@ function is_variable_accessible ( identifier, linenum, array ) {
 	var n_close_parens = ( braces_pattern.match( /[}]/g ) || [] ).length;
 	var n_open_parens = ( braces_pattern.match( /[{]/g ) || [] ).length;
 
-	console.log( braces_pattern + ": Close Paren: " + n_close_parens + "\tOpen Paren: " + n_open_parens );
+	//console.log( braces_pattern + ": Close Paren: " + n_close_parens + "\tOpen Paren: " + n_open_parens );
 
 	//if n of '}' >= n of '{', return false, else return true
 	if ( ( n_close_parens != 0 || n_open_parens != 0 ) && ( n_close_parens >= n_open_parens ) ) {
@@ -284,16 +285,37 @@ function check_case_and_switch_data_types_match ( statement, linenum, array ) {
 //check if the declared integer var in the loop is redundant
 function check_forloop_var_dec_unique ( str, linenum, array ) {
 	loop_int_var = str.replace( /^for\s*\(\s*int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2})\s*\)\s*{$/, '$1' );
-
+	
 	//loop through the previous values
-	for ( var i = 0; i < linenum; i++ ) {
-		var prev_value = array [ i ].replace( /^\b(?:int|double|float|String|char|boolean)\b\s+\b([A-z0-9]+)?\b.+$/, "$1" );
-		
+	for ( var i = linenum - 1 ; i >= 0; i-- ) {
+		line_str = array [ i ]; 
 
-		if ( loop_int_var == prev_value ) {
-			line_error = "Variable '" + loop_int_var + "' on line number " + ( parseInt( linenum ) + 1 ) + " already in use.";
-			return false;
-		}																			
+		//check if for loop param initialization variable has been declared already
+		if ( line_str.match( /^(?:int|double|float|String|char|boolean)\s/ ) ) {
+			prev_var = line_str.replace( /^\b(?:int|double|float|String|char|boolean)\b\s+\b([A-z0-9]+)?\b.+$/, "$1" );
+			if ( loop_int_var == prev_var ) {
+				line_error = "Variable '" + loop_int_var + "' on line number " + ( parseInt( linenum ) + 1 ) + " already in use.";
+				return false;
+			}	
+		}
+
+		//check if for loop param initialization variable is available for usage
+		else if ( line_str.match( /^for/ ) ) {
+			prev_var = line_str.replace( /^for[ ]*[(][ ]*int\s+([A-z][A-z0-9]?)\s.+$/, "$1" );
+
+			if ( is_variable_accessible ( prev_var, linenum, array ) ) {
+
+				if ( loop_int_var == prev_var ) {
+					line_error = "Variable '" + loop_int_var + "' on line number " + ( parseInt( linenum ) + 1 ) + " already in use.";
+					return false;
+				}
+			}
+
+		}
+			
+
+		
+																			
 	}
 
 	return true;

@@ -64,7 +64,7 @@ function validate_operands ( statement, linenum ) {
 	//for foorloop, check if the input length is an integer
 	if ( statement.match( /^for/ ) ) {
 
-		if ( ! statement.match( /^for\s*\(\s*int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2})\s*\)\s*{$/ ) ) {
+		if ( ! statement.match( /^for\s*\(\s*int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*([A-z][A-z0-9]?)\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*([A-z][A-z0-9]?)([\-+]{2})\s*\)\s*{$/ ) ) {
 			line_error = "Invalid parameters in for-loop statement on line number " + ( parseInt( linenum ) + 1 ) + ".";
 			return false;
 		}
@@ -183,8 +183,7 @@ function type_check_statements ( statement, linenum, array ) {
 			if ( check_if_var_has_been_declared ( statement, linenum, array ) ) {
 				//check operands accessible
 				if ( are_operands_accessible ( statement, linenum, array ) ) {
-					//check if the identifiers/constants used in the foor loop are integers
-					if ( check_identifiers_and_constants_integer ( statement, linenum, array ) ) return true;
+					return true;
 				}
 			}
 		}

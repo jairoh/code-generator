@@ -2,6 +2,9 @@
 	font-size: 13px;
 	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+#output_box {
+	overflow: scroll;
+}
 
 #tags_box, #dock_box {
 	font-weight: bold;
