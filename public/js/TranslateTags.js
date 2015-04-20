@@ -28,7 +28,7 @@ function translateTags ( tag_array ) {
 
 			user_input_structure += "}"; //add to user pattern
 
-		} else if ( tag.match( /^<div\s+class="println"/ ) ) { //print
+		} else if ( tag.match( /^<div\s+class="print(?:ln)?"/ ) ) { //print
 			code_fragment += returnTabs( tab_n ) + getPrintStatementEquivalent( tag );
 			user_input_structure += "PL;";
 		} else if ( tag.match( /^<div\s+class="variable"\s+datatype="(int|double|float|String|char|boolean)"/ ) ) { //variable
@@ -51,7 +51,7 @@ function translateTags ( tag_array ) {
 
 //return println statement
 function getPrintStatementEquivalent ( tag ) {
-	return tag.replace( /^<div\s+class="println"\s+val="([^"]*)".*>$/, "System.out.println( $1 );\n" );
+	return tag.replace( /^<div\s+class="(print|println)?"\s+val="([^"]*)".*>$/, "System.out.$1( $2 );\n" );
 } 
 
 //matching if,elseif,else,switch,case

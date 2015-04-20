@@ -26,7 +26,7 @@ function check_if_var_has_been_declared ( str, linenum, array ) {
 	parameter_line = str.replace( /^(?:System\.out\.print(?:ln)?|if|else if|switch|for|(?:\}\s*)?while)\s*\(([^)]*)\)(?:;|\s*\{)|(case\s+[^:]):$/, "$1" ).trim();
 		
 	//replace everything in the forloop condition apart from $2 and $3 => (int a = $2; a < $3; a++) 
-	parameter_line = parameter_line.replace( /^int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2})$/, "$2 $3" );
+	parameter_line = parameter_line.replace( /^int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2}|[\-+]=[0-9]{1,9})$/, "$2 $3" );
 
 	//put all the identifiers in an array
 	identifier_arr = parameter_line.replace( /(".+"|'.+'|&quot;.+&quot;)/g, "" ).match( /[A-z][A-z0-9]*/g );
@@ -164,7 +164,7 @@ function are_operands_accessible ( str, linenum, array ) {
 	parameter_line = str.replace( /^(?:System\.out\.print(?:ln)?|if|else if|switch|for|(?:\}\s*)?while)\s*\(([^)]*)\)(?:;|\s*\{)|(case\s+[^:]):$/, "$1" ).trim();
 		
 	//replace everything in the forloop condition apart from $2 and $3 => (int a = $2; a < $3; a++) 
-	parameter_line = parameter_line.replace( /^int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2})$/, "$2 $3" );
+	parameter_line = parameter_line.replace( /^int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2}|[\-+]=[0-9]{1,9})$/, "$2 $3" );
 
 	//put all the identifiers in an array
 	identifier_arr = parameter_line.replace( /(".+"|'.+'|&quot;.+&quot;|true|false)/g, "" ).match( /[A-z][A-z0-9]*/g );

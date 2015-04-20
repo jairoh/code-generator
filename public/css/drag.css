@@ -51,7 +51,7 @@ body {
 			overflow:inherit;
 		}
 
-		#tags_box .variable,#tags_box .println, #tags_box .if,#tags_box .elseif, #tags_box .else, #tags_box .switch, #tags_box .add_case_box, #tags_box .while, #tags_box .forloop {
+		#tags_box .variable,#tags_box .println, #tags_box .print, #tags_box .if,#tags_box .elseif, #tags_box .else, #tags_box .switch, #tags_box .add_case_box, #tags_box .while, #tags_box .forloop {
 			display: none;
 		}
 
@@ -279,7 +279,7 @@ body {
 			//border-color:#99D571 !important;
 		}
 
-		.println, .variable {
+		.print, .println, .variable {
 			//border:solid 1px #000;
 			padding:5px; 
 			background: #EB3535;
