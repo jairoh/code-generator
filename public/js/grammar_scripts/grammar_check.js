@@ -20,7 +20,7 @@ $( document ).ready( function () {
 
 function grammmar_check ( generated_codes_arr ) {
 
-	code_validity = lexical_anaylize( generated_codes_arr );
+	code_validity = ( lexical_anaylize( generated_codes_arr ) && check_problems_sytax_restrictions( generated_codes_arr ) );
 
 	if ( ! code_validity ) console.log( get_grammar_error() );
 	else console.log( "fine" );

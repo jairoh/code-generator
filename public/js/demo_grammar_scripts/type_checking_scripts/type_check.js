@@ -32,7 +32,7 @@ function check_if_var_has_been_declared ( str, linenum, array ) {
 	//put all the identifiers in an array
 	identifier_arr = parameter_line.replace( /(".+"|'.+'|&quot;.+&quot;)/g, "" ).match( /[A-z][A-z0-9]*/g );
 
-	console.log( "Line " + linenum + " = " + parameter_line );
+	//console.log( "Line " + linenum + " = " + parameter_line );
 
 	var n = ( isNaN( identifier_arr ) )? identifier_arr.length : 0;
 

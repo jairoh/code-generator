@@ -47,7 +47,7 @@
     <!-- OWN CSS AND JS-->
     <link rel="stylesheet" type="text/css" href="{{$root_path}}css/round.css">
     <script type="text/javascript" src="{{$root_path}}js/round.js" ></script>
-
+    <script type="text/javascript" src="{{$root_path}}js/problems_syntax_restrictions.js" ></script>
 @stop
 
 @section( 'content' )

@@ -193,3 +193,22 @@ function type_check_statements ( statement, linenum, array ) {
 
 	return true;
 }
+
+//check the problem's syntax restrictions (e.g. problem 1: a==b not a==a)
+function check_problems_sytax_restrictions ( statements_arr ) {
+	prob_id = parseInt( $( '#prob_id' ).val() );
+
+	switch ( prob_id ) {
+		case 1:
+			if ( ! E_Prob_1_res ( statements_arr ) ) return false;
+		break;
+
+		case 2:
+			if ( ! E_Prob_2_res ( statements_arr ) ) return false;
+		break;
+	}
+
+	
+
+	return true;
+}
