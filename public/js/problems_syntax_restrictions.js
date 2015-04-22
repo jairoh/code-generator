@@ -85,3 +85,81 @@ function E_Prob_5_res ( statements_arr ) {
 	line_error = "Cannot find conditional comparison of the initialized variable greater than or equal to 30.";
 	return false;
 }
+
+//check if there a comparison: (var_dec >= 50 or 50 <= var_dec ) and (var_dec >= 80 or 80 <= var_dec) 
+function A_Prob_3_res ( statements_arr ) {
+	found = false;
+
+	for ( var i in statements_arr ) {
+
+		//check if there is a comparison: (var_dec >= 50 or 50 <= var_dec )
+		if ( statements_arr [ i ].trim().match( /^if\s*\(\s*([A-z][A-z0-9]?\s*>=\s*50|50\s*<=\s*[A-z][A-z0-9]?)\s*\)\s*{$/ ) ) {
+			found = true;
+			break;
+		}
+
+	}
+	if ( ! found ) {
+		line_error = "Cannot find conditional comparison of the initialized variable greater than or equals to 50.";
+		return false;
+	}
+
+	found = false;
+	for ( var i in statements_arr ) {
+
+		//and (var_dec >= 80 or 80 <= var_dec) 
+		if ( statements_arr [ i ].trim().match( /^if\s*\(\s*([A-z][A-z0-9]?\s*>=\s*80|80\s*<=\s*[A-z][A-z0-9]?)\s*\)\s*{$/ ) ) {
+			found = true;
+			break;
+		}
+
+			
+	}
+
+	if ( ! found ) {
+		line_error = "Cannot find conditional comparison of the initialized variable greater than or equals to 80.";
+		return false;
+	}
+
+	
+	return found;
+}
+
+//check if countdown is from 10 and ( var_dec == 1 or 1 == var_dec )
+function A_Prob_4_res ( statements_arr ) {
+	found = false;
+
+	for ( var i in statements_arr ) {
+
+		//check if countdown is from 10
+		if ( statements_arr [ i ].trim().match( /^\}\s*while\s*\(\s*([A-z][A-z0-9]?\s*<=\s*10|10\s*>=\s*[A-z][A-z0-9]?\s*)\s*\);$/ ) ) {
+			found = true;
+			break;
+		}
+
+	}
+	if ( ! found ) {
+		line_error = "Cannot find do while countdown from 10.";
+		return false;
+	}
+
+	found = false;
+	for ( var i in statements_arr ) {
+
+		//and (var_dec >= 80 or 80 <= var_dec) 
+		if ( statements_arr [ i ].trim().match( /^if\s*\(\s*([A-z][A-z0-9]?\s*==\s*1|1\s*==\s*[A-z][A-z0-9]?)\s*\)\s*{$/ ) ) {
+			found = true;
+			break;
+		}
+
+			
+	}
+
+	if ( ! found ) {
+		line_error = "Cannot find conditional comparison of the initialized variable equals to 1.";
+		return false;
+	}
+
+	
+	return found;
+}
