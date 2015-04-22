@@ -27,7 +27,7 @@
             
             <?= Form::open( array('url' => 'login/do_login' ) ) ?>	
                 <tr>
-                    <td>Username/Email:</td>
+                    <td>E-mail Address:</td>
                     <td>Password:</td>
                 </tr>
                 <tr>

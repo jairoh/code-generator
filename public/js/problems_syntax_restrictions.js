@@ -6,10 +6,10 @@ function E_Prob_1_res ( statements_arr ) {
 	for ( var i in statements_arr ) {
 
 		//check if there is a comparison between two identitifiers;
-		if ( statements_arr [ i ].trim().match( /^if\s*\(\s*[A-z][A-z0-9]?\s*(?:==|!=|>|<|>=|<=)\s*[A-z][A-z0-9]?\s*\)\s*{$/ ) ) {
+		if ( statements_arr [ i ].trim().match( /^if\s*\(\s*[A-z][A-z0-9]?\s*==\s*[A-z][A-z0-9]?\s*\)\s*{$/ ) ) {
 			
 			//and w/ the identifiers must not be the same
-			if ( statements_arr [ i ].trim().match( /^if\s*\(\s*([A-z][A-z0-9]?)\s*(?:==|!=|>|<|>=|<=)\s*\b(?!\1).{1,2}\b\s*\)\s*{$/ ) ) {
+			if ( statements_arr [ i ].trim().match( /^if\s*\(\s*([A-z][A-z0-9]?)\s*==\s*\b(?!\1).{1,2}\b\s*\)\s*{$/ ) ) {
 				return true;
 			}
 			
@@ -17,7 +17,7 @@ function E_Prob_1_res ( statements_arr ) {
 			
 	}
 
-	line_error = "Cannot find conditional comparison between 2 identifiers.";
+	line_error = "Cannot find relational comparison between 2 identifiers if they are equal.";
 	return false;
 }
 
@@ -35,7 +35,7 @@ function E_Prob_2_res ( statements_arr ) {
 
 	}
 	if ( ! found ) {
-		line_error = "Cannot find conditional comparison of the initialized variable less than 75.";
+		line_error = "Cannot find relational comparison of the initialized variable if it is less than 75.";
 		return false;
 	}
 
@@ -52,7 +52,7 @@ function E_Prob_2_res ( statements_arr ) {
 	}
 
 	if ( ! found ) {
-		line_error = "Cannot find conditional comparison of the initialized variable greater than or equal to 75.";
+		line_error = "Cannot find relational comparison of the initialized variable if it is greater than or equal to 75.";
 		return false;
 	}
 
@@ -65,11 +65,11 @@ function E_Prob_3_res ( statements_arr ) {
 	for ( var i in statements_arr ) {
 
 		//check if there is a comparison between two identitifiers;
-		if ( statements_arr [ i ].trim().match( /^if\s*\(\s*[A-z][A-z0-9]?\s*(?:==|!=|>|<|>=|<=)\s*false\s*\)\s*{$/ ) ) return true;
+		if ( statements_arr [ i ].trim().match( /^if\s*\(\s*[A-z][A-z0-9]?\s*==\s*false\s*\)\s*{$/ ) ) return true;
 			
 	}
 
-	line_error = "Cannot find conditional comparison between an identifier and a boolean value 'false.'";
+	line_error = "Cannot find relational comparison between an identifier and a boolean value 'false.'";
 	return false;
 }
 
@@ -82,7 +82,7 @@ function E_Prob_5_res ( statements_arr ) {
 			
 	}
 
-	line_error = "Cannot find conditional comparison of the initialized variable greater than or equal to 30.";
+	line_error = "Cannot find relational comparison of the initialized variable if it is greater than or equal to 30.";
 	return false;
 }
 
@@ -100,7 +100,7 @@ function A_Prob_3_res ( statements_arr ) {
 
 	}
 	if ( ! found ) {
-		line_error = "Cannot find conditional comparison of the initialized variable greater than or equals to 50.";
+		line_error = "Cannot find relational comparison of the initialized variable greater than or equals to 50.";
 		return false;
 	}
 
@@ -117,7 +117,7 @@ function A_Prob_3_res ( statements_arr ) {
 	}
 
 	if ( ! found ) {
-		line_error = "Cannot find conditional comparison of the initialized variable greater than or equals to 80.";
+		line_error = "Cannot find relational comparison of the initialized variable greater than or equals to 80.";
 		return false;
 	}
 
@@ -132,7 +132,7 @@ function A_Prob_4_res ( statements_arr ) {
 	for ( var i in statements_arr ) {
 
 		//check if countdown is from 10
-		if ( statements_arr [ i ].trim().match( /^\}\s*while\s*\(\s*([A-z][A-z0-9]?\s*<=\s*10|10\s*>=\s*[A-z][A-z0-9]?\s*)\s*\);$/ ) ) {
+		if ( statements_arr [ i ].trim().match( /^\}\s*while\s*\(\s*([A-z][A-z0-9]?\s*>=\s*1|1\s*<=\s*[A-z][A-z0-9]?\s*)\s*\);$/ ) ) {
 			found = true;
 			break;
 		}
@@ -156,7 +156,7 @@ function A_Prob_4_res ( statements_arr ) {
 	}
 
 	if ( ! found ) {
-		line_error = "Cannot find conditional comparison of the initialized variable equals to 1.";
+		line_error = "Cannot find relational comparison of the initialized variable equals to 1.";
 		return false;
 	}
 
