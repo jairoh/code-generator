@@ -59,3 +59,29 @@ function E_Prob_2_res ( statements_arr ) {
 	
 	return found;
 }
+
+//check if there a comparison between an identifier and a boolean value false
+function E_Prob_3_res ( statements_arr ) {
+	for ( var i in statements_arr ) {
+
+		//check if there is a comparison between two identitifiers;
+		if ( statements_arr [ i ].trim().match( /^if\s*\(\s*[A-z][A-z0-9]?\s*(?:==|!=|>|<|>=|<=)\s*false\s*\)\s*{$/ ) ) return true;
+			
+	}
+
+	line_error = "Cannot find conditional comparison between an identifier and a boolean value 'false.'";
+	return false;
+}
+
+//check if there a comparison: (var_dec >= 30 )
+function E_Prob_5_res ( statements_arr ) {
+	for ( var i in statements_arr ) {
+
+		//check if there a comparison: (var_dec >= 30 )
+		if ( statements_arr [ i ].trim().match( /^if\s*\(\s*([A-z][A-z0-9]?\s*>=\s*30|30\s*<=\s*[A-z][A-z0-9]?)\s*\)\s*{$/ ) ) return true;
+			
+	}
+
+	line_error = "Cannot find conditional comparison of the initialized variable greater than or equal to 30.";
+	return false;
+}
