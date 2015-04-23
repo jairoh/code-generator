@@ -132,7 +132,7 @@ function A_Prob_4_res ( statements_arr ) {
 	for ( var i in statements_arr ) {
 
 		//check if countdown is from 10
-		if ( statements_arr [ i ].trim().match( /^\}\s*while\s*\(\s*([A-z][A-z0-9]?\s*>=\s*1|1\s*<=\s*[A-z][A-z0-9]?\s*)\s*\);$/ ) ) {
+		if ( statements_arr [ i ].trim().match( /^\}\s*while\s*\(\s*([A-z][A-z0-9]?\s*(>=\s*1|>\s*0)|(0\s*<|1\s*<=)\s*[A-z][A-z0-9]?\s*)\s*\);$/ ) ) {
 			found = true;
 			break;
 		}
@@ -146,7 +146,7 @@ function A_Prob_4_res ( statements_arr ) {
 	found = false;
 	for ( var i in statements_arr ) {
 
-		//and (var_dec >= 80 or 80 <= var_dec) 
+		//and (var_dec == 1 or 1 == var_dec) 
 		if ( statements_arr [ i ].trim().match( /^if\s*\(\s*([A-z][A-z0-9]?\s*==\s*1|1\s*==\s*[A-z][A-z0-9]?)\s*\)\s*{$/ ) ) {
 			found = true;
 			break;
@@ -162,4 +162,40 @@ function A_Prob_4_res ( statements_arr ) {
 
 	
 	return found;
+}
+
+//check if the do while loop is from 10
+function check_do_while_number_of_loops ( statements_arr, loop_n ) {
+
+
+	//get the variable_loop_n
+	for ( var i in statements_arr ) {
+
+		if ( statements_arr [ i ].trim().match( /^\}\s*while\s*\(\s*(?:0\s*<|1\s*<=)\s*([A-z][A-z0-9]?)\s*\s*\);$/ ) ) {
+			var_dec = statements_arr [ i ].trim().replace( /^\}\s*while\s*\(\s*(?:0\s*<|1\s*<=)\s*([A-z][A-z0-9]?)\s*\s*\);$/, "$1" );
+
+			break;
+		} else if ( statements_arr [ i ].trim().match( /^\}\s*while\s*\(\s*([A-z][A-z0-9]?)\s*(?:>=\s*1|>\s*0)\s*\);$/ ) ) {
+			var_dec = statements_arr [ i ].trim().replace( /^\}\s*while\s*\(\s*([A-z][A-z0-9]?)\s*(?:>=\s*1|>\s*0)\s*\);$/, "$1" );
+			break;
+		}
+		
+
+	}
+
+	//check if the variable_loop_n == 10
+	regex = new RegExp( "^int[ ]+" + var_dec + "[ ]*=[ ]*([0-9]{1,9})[ ]*;$" );
+	console.log( regex );
+	for ( var i in statements_arr ) {
+
+		if ( statements_arr [ i ].trim().match ( regex ) ) {
+			if ( 10 == statements_arr [ i ].trim().replace( regex, "$1" ) ) {
+				return true;
+			} 
+			break;
+		}
+	}
+
+	line_error = "Do while loop must start from 10.";
+	return false;
 }
