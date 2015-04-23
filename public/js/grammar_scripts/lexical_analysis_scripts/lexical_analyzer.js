@@ -225,6 +225,10 @@ function check_problems_sytax_restrictions ( statements_arr ) {
 			//check if the do while loop is from 10
 			if ( ! check_do_while_number_of_loops ( statements_arr, 10 ) ) return false;
 		break;
+
+		case 10:
+			if ( ! A_Prob_5_res ( statements_arr ) ) return false;
+		break;
 	}
 
 	

@@ -199,3 +199,23 @@ function check_do_while_number_of_loops ( statements_arr, loop_n ) {
 	line_error = "Do while loop must start from 10.";
 	return false;
 }
+
+//check if countdown is from 10 and ( var_dec == var_dec )
+function A_Prob_5_res ( statements_arr ) {
+	for ( var i in statements_arr ) {
+
+		//check there must be loop between two identitifiers;
+		if ( statements_arr [ i ].trim().match( /^while\s*\(\s*[A-z][A-z0-9]?\s*(?:==|!=|>|<|>=|<=)\s*[A-z][A-z0-9]?\s*\)\s*{$/ ) ) {
+			
+			//and w/ the identifiers must not be the same
+			if ( statements_arr [ i ].trim().match( /^while\s*\(\s*([A-z][A-z0-9]?)\s*(?:==|!=|>|<|>=|<=)\s*\b(?!\1).{1,2}\b\s*\)\s*{$/ ) ) {
+				return true;
+			}
+			
+		}
+			
+	}
+
+	line_error = "Cannot find a loop from an identifier to another.";
+	return false;
+}
