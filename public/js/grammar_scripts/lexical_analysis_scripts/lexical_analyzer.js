@@ -15,8 +15,8 @@ function lexical_anaylize ( statements_arr ) {
 		var str = statements_arr [ i ].trim();
 
 		if ( ! is_prefix_valid ( str, i ) ) {
-			console.log( "Invalid keyword \"" + str.replace( /^\b([^ ]+)\b\s.*$/, "$1" ) + "\" on line number " + ( parseInt( i ) + 1 ) + "." );
-			return false;
+			line_error = "Invalid keyword \"" + str.replace( /^\b([^ ]+)\b\s.*$/, "$1" ) + "\" on line number " + ( parseInt( i ) + 1 ) + ".";
+			code_validity = false;
 		} else {
 
 			//check the validity of the operands of a function statement

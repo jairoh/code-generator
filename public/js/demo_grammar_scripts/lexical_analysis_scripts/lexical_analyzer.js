@@ -15,8 +15,9 @@ function lexical_anaylize ( statements_arr ) {
 		var str = statements_arr [ i ].trim();
 
 		if ( ! is_prefix_valid ( str, i ) ) {
-			console.log( "Invalid keyword \"" + str.replace( /^\b([^ ]+)\b\s.*$/, "$1" ) + "\" on line number " + ( parseInt( i ) + 1 ) + "." );
-			return false;
+			line_error = "Invalid keyword \"" + str.replace( /^\b([^ ]+)\b\s.*$/, "$1" ) + "\" on line number " + ( parseInt( i ) + 1 ) + ".";
+			code_validity = false;
+			break;
 		} else {
 
 			//check the validity of the operands of a function statement
@@ -146,6 +147,8 @@ function check_sytax_statement ( statement, linenum, statements_arr ) {
 
 //type checking will happen in here
 function type_check_statements ( statement, linenum, array ) {
+	console.log( statement );
+
 
 	//check var dec 
 	if ( statement.match( /^(?:int|double|float|String|char|boolean)\s/ ) ) {
@@ -154,6 +157,7 @@ function type_check_statements ( statement, linenum, array ) {
 	}
 	//check variable parameters if they have been declared or initialized
 	else if ( statement.match( /^(?:System\.out\.print(?:ln)?|if|else if|switch|(?:}\s*)?while)\s*/ ) ) { 
+
 		if ( check_if_var_has_been_declared ( statement, linenum, array ) ) {
 			
 			//check operands accessible
