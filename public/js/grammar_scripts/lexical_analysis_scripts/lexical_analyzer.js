@@ -211,6 +211,10 @@ function check_problems_sytax_restrictions ( statements_arr ) {
 			if ( ! E_Prob_3_res ( statements_arr ) ) return false;
 		break;
 
+		case 4:
+			if ( ! E_Prob_4_res ( statements_arr ) ) return false;
+		break;
+
 		case 5:
 			if ( ! E_Prob_5_res ( statements_arr ) ) return false;
 		break;

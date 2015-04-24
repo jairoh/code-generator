@@ -65,13 +65,39 @@ function E_Prob_3_res ( statements_arr ) {
 	for ( var i in statements_arr ) {
 
 		//check if there is a comparison between two identitifiers;
-		if ( statements_arr [ i ].trim().match( /^if\s*\(\s*[A-z][A-z0-9]?\s*==\s*false\s*\)\s*{$/ ) ) return true;
+		if ( statements_arr [ i ].trim().match( /^if\s*\(\s*([A-z][A-z0-9]?\s*==\s*false|false\s*==\s*[A-z][A-z0-9]?)\s*\)\s*{$/ ) ) return true;
 			
 	}
 
 	line_error = "Cannot find relational comparison between an identifier and a boolean value 'false.'";
 	return false;
 }
+
+//check if the switch variable parameter has a character data type
+function E_Prob_4_res ( statements_arr ) {
+	
+	//get the identifier parameter in the switch statement
+	for ( var i in statements_arr ) {
+
+		if ( statements_arr [ i ].trim().match( /^switch\s*\(\s*[A-z][A-z0-9]?\s*\)\s*\{$/ ) ) {
+			var_dec = statements_arr [ i ].trim().replace( /^switch\s*\(\s*([A-z][A-z0-9]?)\s*\)\s*\{$/, "$1" );
+			break;
+		}
+
+	}
+
+
+	//find the character variable
+	regex = RegExp( "^char[ ]+" + var_dec + "[ ]+.+;" );
+	for ( var i in statements_arr ) {
+
+		if ( statements_arr [ i ].trim().match( regex ) ) return true;
+
+	}
+
+	line_error = "Cannot switch statement with a parameter of character variable.";
+	return false;
+} 
 
 //check if there a comparison: (var_dec >= 30 )
 function E_Prob_5_res ( statements_arr ) {
@@ -185,7 +211,6 @@ function check_do_while_number_of_loops ( statements_arr, loop_n ) {
 
 	//check if the variable_loop_n == 10
 	regex = new RegExp( "^int[ ]+" + var_dec + "[ ]*=[ ]*([0-9]{1,9})[ ]*;$" );
-	console.log( regex );
 	for ( var i in statements_arr ) {
 
 		if ( statements_arr [ i ].trim().match ( regex ) ) {

@@ -74,7 +74,7 @@ function check_expressions_valid ( str, linenum, type_of_cond ) {
 		else if ( str.match( /^(if|else if|while)\s*\(\s*(?:null|"[^"]{0,10}"|'[^']'|(?:[0-9]{0,9}\.[0-9]{0,2}|[0-9]{0,9}\.[0-9]{1,2})|[0-9]{1,9})\s*(?:==|!=|>|<|>=|<=)\s*(?:null|true|false|[A-z][A-z0-9]?)\s*\)\s*{$/ ) ) return true;
 		
 		//keyword( <const> <rel_op> <const> )
-		else if ( str.match( /^(if|else if|while)\s*\(\s*(?:null|true|false|[A-z][A-z0-9]?)\s*(?:==|!=|>|<|>=|<=)\s*(?:null|true|false|"[^"]{0,10}"|'[^']'|(?:[0-9]{1,9}\.[0-9]{0,2}|[0-9]{0,9}\.[0-9]{1,2})|[0-9]{1,9})\s*\)\s*{$/ ) ) return true;
+		else if ( str.match( /^(if|else if|while)\s*\(\s*(?:null|true|false|[A-z][A-z0-9]?|"[^"]{0,10}"|'[^']'|(?:[0-9]{1,9}\.[0-9]{0,2}|[0-9]{0,9}\.[0-9]{1,2})|[0-9]{1,9})\s*(?:==|!=|>|<|>=|<=)\s*(?:null|true|false|[A-z][A-z0-9]?|"[^"]{0,10}"|'[^']'|(?:[0-9]{1,9}\.[0-9]{0,2}|[0-9]{0,9}\.[0-9]{1,2})|[0-9]{1,9})\s*\)\s*{$/ ) ) return true;
 
 
 		else {
