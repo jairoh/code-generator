@@ -77,7 +77,9 @@
         	
             <div id="left_content">
             	<div id="slider_holder">
-                
+                Try the <b id="c1">Code</b> <b id="f">Fragment</b> <b id="c2">Compiler</b>... <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                ...and enjoy building programs!
                 </div><!--end of slider_holder-->
             </div><!--end of left_content-->
             
