@@ -325,15 +325,18 @@
 				</div><!--end of level-->
 
 				<div class=<?php echo ( $problems_available [ 3 ] [ 3 ] != 0 )? 'level_opened' : 'level_closed' ?>>
-					<a class=<?php echo ( $problems_available [ 3 ] [ 3 ] == 2 )? 'level_solved_num' : 'level_unsolved_num' ?>>3</a>
+					<a class=<?php echo ( $problems_available [ 3 ] [ 3 ] == 2 )? 'level_solved_num' : 'level_unsolved_num' ?> 
+						<?php if( $problems_available [ 3 ] [ 3 ] != 0 ) echo 'onClick="proceed_to_the_problem( 3, 3 );"' ?> >3</a>
 				</div><!--end of level-->
 
 				<div class=<?php echo ( $problems_available [ 3 ] [ 4 ] != 0 )? 'level_opened' : 'level_closed' ?>>
-					<a class=<?php echo ( $problems_available [ 3 ] [ 4 ] == 2 )? 'level_solved_num' : 'level_unsolved_num' ?>>4</a>
+					<a class=<?php echo ( $problems_available [ 3 ] [ 4 ] == 2 )? 'level_solved_num' : 'level_unsolved_num' ?> 
+						<?php if( $problems_available [ 3 ] [ 4 ] != 0 ) echo 'onClick="proceed_to_the_problem( 3, 4 );"' ?> >4</a>
 				</div><!--end of level-->
 
 				<div class=<?php echo ( $problems_available [ 3 ] [ 5 ] != 0 )? 'level_opened' : 'level_closed' ?>>
-					<a class=<?php echo ( $problems_available [ 3 ] [ 5 ] == 2 )? 'level_solved_num' : 'level_unsolved_num' ?>>5</a>
+					<a class=<?php echo ( $problems_available [ 3 ] [ 5 ] == 2 )? 'level_solved_num' : 'level_unsolved_num' ?> 
+						<?php if( $problems_available [ 3 ] [ 5 ] != 0 ) echo 'onClick="proceed_to_the_problem( 3, 5 );"' ?> >5</a>
 				</div><!--end of level-->
 			</div><!--end of leve_holder-->
 		</div>

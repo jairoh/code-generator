@@ -165,7 +165,7 @@ function A_Prob_4_res ( statements_arr ) {
 
 	}
 	if ( ! found ) {
-		line_error = "Cannot find do while countdown from 10.";
+		line_error = "Cannot find do while countdown from 10 to 1.";
 		return false;
 	}
 
