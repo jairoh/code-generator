@@ -1,9 +1,25 @@
-.image_slider {
-	margin-top: 20px;
+/*SLIDER*/
+#slider {
+	margin: 20px auto;
+	width: 1000px;
+	position: relative;
+	overflow: hidden;
 }
+
+#slider ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 300px;
+  list-style: none;
+}
+
+
+/*END SLIDER*/
+
 .three_col_box {
 	margin: 20px auto;
-	width: 1200px;
+	width: 1000px;
 	height: 300px;
 	//border: 1px solid green;
 }
@@ -18,7 +34,7 @@
 .b1, .b2, .b3 {
 	border: solid 5px #555;
 	padding: 20px;
-	height: 350px;
+	height: 430px;
 	border-radius: 0 50px 0 0;
 }
 
