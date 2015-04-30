@@ -89,16 +89,7 @@
 				<div class="b3">
 					<h3><span class="while">Contributors</span></h3>
 					
-				<!-- 	<table>
-						<tr>
-							<td><div class="circular"><img src="{{$root_path}}img/jairoh.jpg"></div></td>
-							<td><div class="circular"><img src="{{$root_path}}img/elyza.jpg"></div></td>
-						</tr>
-						<tr>
-							<td><div class="circular"><img src="{{$root_path}}img/jomar.jpg"></div></td>
-							<td><div class="circular"><img src="{{$root_path}}img/kirlven.jpg"></div></td>
-						</tr>
-					</table> -->
+					<img src="{{$root_path}}img/Contributors.png" >
 				</div>
 
 			</td>
