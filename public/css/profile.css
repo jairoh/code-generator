@@ -4,6 +4,10 @@
 .panel {
 	margin-top: 20px;
 }
+.user_img {
+	width: 100px;
+	border-radius: 50%;
+}
 
 /*Caregory progress boxes*/
 .category_progress_box .progress-bar, .legend_progress_box .progress-bar {

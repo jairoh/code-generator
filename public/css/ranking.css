@@ -1,3 +1,7 @@
+.user_img {
+	width: 50px;
+	border-radius: 50%;
+}
 .user_lists {
 	margin: 20px auto;
 	width: 1000px;

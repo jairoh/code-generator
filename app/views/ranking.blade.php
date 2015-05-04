@@ -55,7 +55,7 @@
 						<table>
 							<tr >
 								<td rowspan="4" >
-									<img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=50" class="img-circle">
+									<img class="user_img" alt="User Pic" src="{{$root_path}}img/default-user-image.png" class="img-circle">
 								</td>
 							</tr>
 							<tr>
@@ -117,7 +117,7 @@
 						<table>
 							<tr >
 								<td rowspan="4" >
-									<img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=50" class="img-circle">
+									<img class="user_img" alt="User Pic" src="{{$root_path}}img/default-user-image.png" class="img-circle">
 								</td>
 							</tr>
 							<tr>
@@ -179,7 +179,7 @@
 						<table>
 							<tr >
 								<td rowspan="4" >
-									<img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=50" class="img-circle">
+									<img class="user_img" alt="User Pic" src="{{$root_path}}img/default-user-image.png" class="img-circle">
 								</td>
 							</tr>
 							<tr>
