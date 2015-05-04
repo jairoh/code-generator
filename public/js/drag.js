@@ -11,6 +11,7 @@ var case_self_id = "";
 var current_switch_type = "";
 var forloop_text_id = "";
 var forloop_value_id = "";
+var forloop_this = "";
 var while_id = "";//for dowhile and while
 
 
@@ -59,12 +60,12 @@ function add_print_value(){
 	}
 	else if(type=="int"||type=="double"||type=="long"||type=="float"||type=="boolean"){
 		$(this.print_tag_id).attr('val', val );
-		$(this.print_tag_id).text('println('+val+')');
+		$(this.print_tag_id).text($(this.print_tag_id).attr('class')+'('+val+')');
 		
 	}
 	else if(type=="char"){
 		$(this.print_tag_id).attr('val', "\'" + val + "\'" );
-		$(this.print_tag_id).text("println('"+val+"')");
+		$(this.print_tag_id).text($(this.print_tag_id).attr('class')+"('"+val+"')");
 	}
 
 	$(this.print_tag_id).attr("datatype",type);
@@ -114,11 +115,39 @@ function count_variable(){
 			suggested_var+="<option>"+$(this).attr('identifier')+"</option>";
     	}
 		$(this).attr('onclick',"show_popup('#var_dec_box','Variable'); get_variable_id(this);");
+
+
     });
 	
 	$('.suggested_var').html(suggested_var);
+
 	
 }//end of count_variable
+
+
+function count_forloop_variable(){
+
+	var forloop_suggested_var = "";
+	$('#dock_box .variable').each(function(index, element) {
+
+		//suggest int type only for forloop variable
+		if($(this).attr('datatype')=='int'){
+			forloop_suggested_var+="<option>"+$(this).attr('identifier')+"</option>";
+		}
+
+    });
+
+
+	//get all the parent forloop variables
+	$(this.forloop_this).parents('.forloop').each(function(){
+		forloop_suggested_var+="<option>"+$('.statement_left:first', this).text().split(" ")[0]+"</option>";
+	});
+
+	$('.forloop_suggested_var').html(forloop_suggested_var);
+
+
+
+}//end function
 
 function count_switch_variable(){
 	var suggested_var = "";
@@ -145,6 +174,10 @@ function count_switch_variable(){
 function count_print(){
 
 	$('#dock_box .println').each(function(){
+		$(this).attr('onclick','get_print_id(this);  print_current_val();');
+	});
+
+	$('#dock_box .print').each(function(){
 		$(this).attr('onclick','get_print_id(this);  print_current_val();');
 	});
 }//end of count_print
@@ -304,9 +337,14 @@ function get_forloop_id(forloop_value_id, forloop_text_id){
 	
 	this.forloop_value_id = forloop_value_id;
 	this.forloop_text_id = forloop_text_id;
-	
 	$('.forloop_value').val($(forloop_text_id).text());
-	//alert($(forloop_id).text());
+}
+
+
+function get_forloop_this(self){
+	this.forloop_this = self;
+	this.forloop_this = $(this.forloop_this).closest('.forloop').get(0);//get the object element of the forloop class	
+
 }
 
 
@@ -549,6 +587,95 @@ function forloop_condition(val, e){
 }//end of forloop_condition
 
 
+
+function forloop_current_value(){
+	var initialized_var = $('.statement_left:first', this.forloop_this).text().split(" = ");//the first element of forloop
+
+	var variable_name = initialized_var[0];
+	var value = initialized_var[1];
+	
+	$('.forloop_var_name').val(variable_name);
+	$('.forloop_var_value').val(value);
+
+
+}//end function
+
+
+
+function add_forloop_value(){
+
+
+	var variable_name = $('.forloop_var_name').val();
+	var value = $('.forloop_var_value').val();
+
+	$('#forloop_input_text:first', this.forloop_this).text(variable_name+' = '+value);
+	close_box();
+	add_forloop_condition();
+}//end function
+
+function add_forloop_compare(){
+	
+	$('.statement_right:first', this.forloop_this).text($('.forloop_suggested_var').val());
+	add_forloop_condition();
+}//end function
+
+
+function add_forloop_input(){
+	$('.statement_right:first', this.forloop_this).text($('.forloop_input_val').val());
+	$('.forloop_input_val').val('');
+	close_box();
+
+	add_forloop_condition();
+	
+}//end function
+
+
+function add_forloop_condition(){
+
+
+	var initialized_var = $('.statement_left:first', this.forloop_this).text();//the first element of forloop
+
+	var operator = $('.forloop_operator:first', this.forloop_this).val();//operator of the second element
+
+	//$('.forloop_operator:first option:selected', this.forloop_this).attr('selected','selected');
+
+	var static_var = $('.statement_right:first', this.forloop_this).text();//value after the operator
+	var in_dec_crement = $('.in_dec_crement:first', this.forloop_this).val();//increment or decrement value
+	var in_dec_crement_by = $('.in_dec_crement_by:first', this.forloop_this).val();//how to many to increment or decrement in each loop
+
+
+	if(operator==">"){
+		operator = "&gt;";
+		
+	}
+	else if(operator=="<"){
+		operator = "&lt;";
+	}
+	else if(operator==">="){
+		operator = "&gt;=";
+	}
+	else if(operator=="<="){
+		operator = "&lt;=";
+	}
+
+	
+	if(in_dec_crement==1){
+		in_dec_crement = "+=";
+	}
+	else {
+		in_dec_crement = "-=";
+	}
+
+
+	$(this.forloop_this).attr('condition', "int "+initialized_var+"; "+initialized_var.split(" ")[0]+" "+operator+" "+static_var+"; "+initialized_var.split(" ")[0]+in_dec_crement+""+in_dec_crement_by);
+
+	//alert("int "+initialized_var+"; "+initialized_var.split(" ")[0]+" "+operator+" "+static_var+"; "+initialized_var.split(" ")[0]+in_dec_crement+""+in_dec_crement_by);
+
+	save_structure();
+
+}//end function	
+
+/*
 function add_forloop_value(){
 
 	    
@@ -570,6 +697,8 @@ function add_forloop_value(){
 
 
 }//end of add_forloop_value
+
+*/
 
 
 
@@ -720,6 +849,11 @@ function save_structure(){
 		localStorage.setItem("current_structure",$('#dock_box').html());
 	},500);
 }//end save_structure
+
+
+function test_loop(t){
+	alert($(t).closest('.popup_box').attr('id'));
+}
 
 
 

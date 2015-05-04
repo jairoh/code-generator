@@ -285,7 +285,7 @@ function check_case_and_switch_data_types_match ( statement, linenum, array ) {
 
 //check if the declared integer var in the loop is redundant
 function check_forloop_var_dec_unique ( str, linenum, array ) {
-	loop_int_var = str.replace( /^for\s*\(\s*int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2})\s*\)\s*{$/, '$1' );
+	loop_int_var = str.replace( /^for\s*\(\s*int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2}|[\-+]=[0-9]{1,9})\s*\)\s*{$/, '$1' );
 	
 	//loop through the previous values
 	for ( var i = linenum - 1 ; i >= 0; i-- ) {
@@ -328,7 +328,7 @@ function check_identifiers_and_constants_integer ( str, linenum, array ) {
 	parameter_line = str.replace( /^(?:System\.out\.print(?:ln)?|if|else if|switch|for|(?:\}\s*)?while)\s*\(([^)]*)\)(?:;|\s*\{)|(case\s+[^:]):$/, "$1" ).trim();
 		
 	//replace everything in the forloop condition apart from $2 and $3 => (int a = $2; a < $3; a++) 
-	input_values = parameter_line.replace( /^int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2})$/, "$2 $3" );
+	input_values = parameter_line.replace( /^int\s([A-z][A-z0-9]?)\s*=\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1\s*(?:==|!=|>|<|>=|<=)\s*([A-z][A-z0-9]?|[0-9]{1,9})\s*;\s*\1([\-+]{2}|[\-+]=[0-9]{1,9})$/, "$2 $3" );
 
 	//put the input values in an array
 	operands = input_values.match( /([A-z][A-z0-9]?|[0-9]{1,9})/g );

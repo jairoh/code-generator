@@ -4,6 +4,7 @@
         font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
     } 
 </style>
+    
 
     <div id="statement_box" class="popup_box">
         <table class="popup_table">
@@ -175,6 +176,91 @@
         </div><!--end of box_button_holder-->
         </center>
     </div><!--end of input_statement_box-->
+
+
+
+
+        <div id="forloop_statement_box" class="popup_box">
+        <table class="popup_table">
+            <tr>
+                <td>Variable name:</td>
+                <td>
+                    <input maxLength="2" class="forloop_var_name" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>Value:</td>
+                <td>
+                    <input class="forloop_var_value" type="text" onkeyup="close_enter(event.keyCode,'#input_type_button');" />
+                </td>
+            </tr>
+        </table>
+         <center>
+        <div id="box_button_holder">
+        <img style="display:none;" id="load_add_account" src="images/loadingtransparent.gif" />
+        <button id="input_type_button" onClick="add_forloop_value();">Ok</button>
+        <button onClick="close_box();">Cancel</button>
+        </div><!--end of box_button_holder-->
+        </center>
+    </div><!--end of forloop_statement_box-->
+
+
+    <div id="forloop_compare_box" class="popup_box">
+        <table class="popup_table">
+            <tr>
+                <td><button onClick="close_box(); show_popup('#forloop_variable_box','Variable'); count_forloop_variable();">Variable</button></td>
+                <td><button onClick="close_box(); show_popup('#forloop_input_box','Enter integer value');">Input</button></td>
+            </tr>
+        </table>
+       
+    </div><!--end of forloop_compare_box-->
+
+
+
+    <div id="forloop_input_box" class="popup_box">
+        <table class="popup_table">
+            <tr>
+                <td>Value:</td>
+                <td id="statement_val_holder">
+                    <input class="forloop_input_val" type="text" onkeyup="close_enter(event.keyCode,'#input_type_button');" />
+                </td>
+            </tr>
+        </table>
+         <center>
+        <div id="box_button_holder">
+        <img style="display:none;" src="images/loadingtransparent.gif" />
+        <button id="input_type_button" onClick="add_forloop_input();">Ok</button>
+        <button onClick="close_box(); show_popup('#forloop_compare_box','Choose');">Cancel</button>
+        </div><!--end of box_button_holder-->
+        </center>
+    </div><!--end of input_statement_box-->
+
+
+
+    <div id="forloop_variable_box" class="popup_box">
+        <table class="popup_table">
+            <tr>
+                <td>List of variables:</td>
+                <td id="td">
+                    <select class="forloop_suggested_var">
+                        <option>Var 1</option>
+                        <option>Var 2</option>
+                        <option>Var 3</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        
+         <center>
+            <div id="box_button_holder">
+            <img style="display:none;" id="" src="images/loadingtransparent.gif" />
+            <button id="suggested_var_button" onClick="add_forloop_compare(); close_box();">Ok</button>
+            <button onClick="close_box(); show_popup('#forloop_compare_box','Choose');">Cancel</button>
+            </div><!--end of box_button_holder-->
+        </center>
+       
+    </div><!--end of statement_variable_box-->
+
     
     
     
@@ -195,7 +281,7 @@
             </tr>
             <tr>
                 <td>Variable name:</td>
-                <td><input class="var_dec_name" maxlength="2" type="text" title="Must be alpha-numeric." /></td>
+                <td><input class="var_dec_name" maxlength="2" type="text" /></td>
             </tr>
             <tr>
                 <td>Value:</td>

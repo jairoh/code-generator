@@ -1,36 +1,22 @@
 
-	
 	var undo_arr = new Array();
 
 
 		$(function(){
 
+			
 			//retrieve current structure when the page is refresh
 			$('#dock_box').html(localStorage.getItem('current_structure'));
+
 			count_tags();
 
-			refresh_tag_box();
+			refresh_tag_box(true);
 
             $('.instruction').on('click',function(){
 				$(".instruction_box",this).toggle();
 			});
 			
 	
-	
-			$( "#tags_box").sortable({
-		    
-		    	drop:function(){
-		    		return false;
-		    	},
-				over:function(){
-
-				}
-		    });
-	
-
-			
-
-
 
 	/*
 			Sortable.create(if_box, {
@@ -105,26 +91,25 @@
 			});
 			*/
 
-	$("#dock_box").droppable({
-        drop: function( ) {
-            	
-				setTimeout(function(){
-				remove_icon();
-				refresh_tag_box();
-				count_variable(); 
-				//count_switch_variable();
-				count_print();
-				count_if();
-				count_forloop();
-				//count_while();
+			$("#dock_box").droppable({
+		        drop: function( ) {
+		            	
+						setTimeout(function(){
+						remove_icon();
+						refresh_tag_box(true);
+						count_variable(); 
+						//count_switch_variable();
+						count_print();
+						count_if();
+						count_forloop();
+						//count_while();
 
-				save_structure();
-				
-	},50);
-			},
-
-			
-    });
+						save_structure();
+						
+			},50);
+					}
+					
+		    });
 
 
 	function count_tags(){
@@ -150,7 +135,7 @@
 				$('#trash_box').removeClass('active');
 				save_structure();
 				ui.draggable.remove();
-				refresh_tag_box();
+				refresh_tag_box(true);
 				//alert(event.target.class);
 			},
 			over:function(){
@@ -201,7 +186,7 @@
 		}//end of remove_icon
 		
 		
-		function refresh_tag_box(){
+		function refresh_tag_box(isSortable){
 
 			//variable
 			$('#variable_box').html('<div id="upper_tag_holder"><div class="tag_holder">\
@@ -209,8 +194,7 @@
                 <div class="instruction">\
                     ?\
                     <div class="instruction_box">\
-                        A variable is a container that holds values that are used in a Java program. Every variable must be declared to use a data type. For example, a variable could be declared to use one of the eight primitive data types: byte, short, int, long, float, double, char or boolean. And, every variable must be given an initial value before it can be used.\
-                        Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html</a>\
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
                     </div><!--end of instruction_box-->\
                 </div><!--end of instruction-->\
                 Variable\
@@ -219,14 +203,13 @@
 				<br/>\
 				</div></div><!--end of tag_holder-->');
 		
-			//print
-			$('#print_box').html('<div id="upper_tag_holder"><div class="tag_holder">\
+			//println
+			$('#println_box').html('<div id="upper_tag_holder"><div class="tag_holder">\
 				<div class="println_icon tag_icon">\
                 <div class="instruction">\
                     ?\
                     <div class="instruction_box">\
-                        This stream is already open and ready to display output or another output destination specified by the host environment or user.\
-                        Read More: <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/System.html#out" target="_blank" >http://docs.oracle.com/javase/7/docs/api/java/lang/System.html#out</a>\
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
                     </div><!--end of instruction_box-->\
                 </div><!--end of instruction-->\
                 println\
@@ -235,14 +218,32 @@
 				<br/>\
     			</div></div><!--end of tag_holder-->');
 
+
+
+
+			$('#print_box').html('<div id="upper_tag_holder"><div class="tag_holder">\
+				<div class="println_icon tag_icon">\
+                <div class="instruction">\
+                    ?\
+                    <div class="instruction_box">\
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
+                    </div><!--end of instruction_box-->\
+                </div><!--end of instruction-->\
+                print\
+            </div><!--end of println_icon-->\
+				<div class="print" val="" style="background:#0C9;">print()</div endprint><!--end of print-->\
+				<br/>\
+    			</div></div><!--end of tag_holder-->');
+
+
+		
 			//if
 			$('#if_box').html(' <div id="upper_tag_holder"><div  class="tag_holder test">\
 									<div class="if_icon tag_icon">\
 									<div class="instruction">\
 					                    ?\
 					                    <div class="instruction_box">\
-					                        The if statement tells your program to execute a certain section of code only if a particular test evaluates to true. \
-                        Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html</a>\
+					                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
 					                    </div><!--end of instruction_box-->\
 					                </div><!--end of instruction-->\
 									if\
@@ -287,8 +288,7 @@
 									<div class="instruction">\
 					                    ?\
 					                    <div class="instruction_box">\
-					                        The else if statement provides a secondary path of execution when an "if" clause evaluates to false. \
-                        Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html</a>\
+					                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
 					                    </div><!--end of instruction_box-->\
 					                </div><!--end of instruction-->\
 									else if\
@@ -331,8 +331,7 @@
 								        <div class="instruction">\
 					                    ?\
 					                    <div class="instruction_box">\
-					                        The else statement provides a secondary path of execution when an "if" clause evaluates to false. \
-                         Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html</a>\
+					                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
 					                    </div><!--end of instruction_box-->\
 					                </div><!--end of instruction-->\
 								        else\
@@ -366,8 +365,7 @@
 							        <div class="instruction">\
 					                    ?\
 					                    <div class="instruction_box">\
-					                        Evaluates its expression, then executes all statements that follow the matching case label.	\
-                        Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html</a>\
+					                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
 					                    </div><!--end of instruction_box-->\
 					                </div><!--end of instruction-->\
 							        switch case\
@@ -421,8 +419,7 @@
         <div class="instruction">\
             ?\
             <div class="instruction_box">\
-                The while statement continually executes a block of statements while a particular condition is true. \
-                        Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html</a>\
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
             </div><!--end of instruction_box-->\
         </div><!--end of instruction-->\
             while\
@@ -492,8 +489,7 @@
         <div class="instruction">\
 	        ?\
 	        <div class="instruction_box">\
-	            The do-while statement evaluates its expression at the bottom of the loop instead of the top.\
-                        Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html</a>\
+	            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
 	        </div><!--end of instruction_box-->\
 	    </div><!--end of instruction-->\
             do while\
@@ -561,58 +557,100 @@
 
 
 
-	$('#forloop_box').html('<div id="upper_tag_holder"><div  class="tag_holder test">\
-        <div class="forloop_icon tag_icon">\
-        <div class="instruction">\
-            ?\
-            <div class="instruction_box">\
-                The for statement provides a compact way to iterate over a range. Programmers often refer to it as the "for loop" because of the way in which it repeatedly loops until a particular condition is satisfied.\
-                       Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html</a>\
-        	</div><!--end of instruction box-->\
-        </div><!--end of instruction-->\
-          for loop\
-        </div><!--end of if_icon-->\
-        <div class="forloop" condition="int x = 0; x < 0; x++;" id="jomarie">\
-            <div class="upper_box forloop_upper_box">\
-                <table border="0" cellpadding="0" cellspacing="0" class="forloop_table">\
-                    <tr>\
-                        <td style="padding-right:15px;"><a class="forloop_label">for</a></td>\
-                        <td>Repeat</td>\
-                        <td><a class="forloop_field" onclick="">0</a></td>\
-                        <td>times</td>\
-                    </tr>\
-                </table>\
-            </div><!--end of upper_box-->\
-            <br/>\
-                <div id="sortable" class="insert_tags insert_tags100 droptrue">\
-                </div><!--end of insert_tags-->\
-            <div class="bottom_box forloop_bottom_box"></div><!--end of bottom_box-->\
-        </div>\
-        <div class="endforloop"></div>\
-        <br/>\
-    </div></div><!--end of tag_holder-->');
+	$('#forloop_box').html('\
+				    <div id="upper_tag_holder"><div  class="tag_holder test">\
+				            <div class="forloop_icon tag_icon">\
+				            <div class="instruction">\
+				                ?\
+				                <div class="instruction_box">\
+				                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
+				                </div><!--end of instruction_box-->\
+				            </div><!--end of instruction-->\
+				              for loop\
+				            </div><!--end of if_icon-->\
+				            <div class="forloop" condition="int x = 0; x == 5; x+=1" id="jomarie">\
+				                <div class="upper_box forloop_upper_box" onclick=" get_forloop_this(this);">\
+				                    <table border="0" cellpadding="0" cellspacing="0" class="statement_table">\
+				                        <tr>\
+				                            <td><a class="if_label">for</a></td>\
+				                            <td valign="middle">\
+				                                <div id="forloop_input_text" class="statement_left" onclick=" get_forloop_this(this); forloop_current_value(); show_popup(\'#forloop_statement_box\',\'Input\'); count_variable();">x = 0</div>\
+				                            </td>\
+				                            \
+				                            <td>\
+				                                <select class="statement_operator forloop_operator" onchange="add_forloop_condition();"> \
+				                                    <option>==</option>\
+				                                    <option>!=</option>\
+				                                    <option>></option>\
+				                                    <option><</option>\
+				                                    <option>>=</option>\
+				                                    <option><=</option>\
+				                                </select>\
+				                            </td>\
+				                            <td>\
+				                                <div class="statement_right" onclick="show_popup(\'#forloop_compare_box\',\'choose\'); ">5</div>\
+				                            </td>\
+				                            <td>\
+				                                <select class="in_dec_crement" onchange="add_forloop_condition();">\
+				                                    <option value="1">Increment by</option>\
+				                                    <option value="2">Decrement by</option>\
+				                                </select>\
+				                            </td>\
+				                            <td>\
+				                                <select class="in_dec_crement_by" onchange="add_forloop_condition();">\
+				                                    <option>1</option>\
+				                                    <option>2</option>\
+				                                    <option>3</option>\
+				                                    <option>4</option>\
+				                                    <option>5</option>\
+				                                </select>\
+				                            </td>\
+				                        </tr>\
+				                    </table>\
+				                </div><!--end of upper_box-->\
+				                <br/>\
+				                    <div id="sortable" class="insert_tags insert_tags100 droptrue">\
+				                    </div><!--end of insert_tags-->\
+				                <div class="bottom_box forloop_bottom_box"></div><!--end of bottom_box-->\
+				            </div>\
+				            <div class="endforloop"></div>\
+				            <br/>\
+				    </div></div><!--end of tag_holder-->\
+				    \
+		');
 
+
+		
 
 			 $('.instruction').on('click',function(){
 					$(".instruction_box",this).toggle();
 				});
-
 	
 
+		if(isSortable==true){
+			
+			
 			$( "div.droptrue").sortable({
-						      		connectWith: "div",
-						    	});
+			      		connectWith: "div",
+			    	});
 
+			
+		}
 
+		else {
+			//disable the tag box
+			      	
+		}
+
+			
 
 
 		}//end of refresh_tag_box
 	
 	
-			 $('.instruction').on('click',function(){
-					$(".instruction_box",this).toggle();
-				});
-		
+		 $('.instruction').on('click',function(){
+			$(".instruction_box",this).toggle();
+		});
 			
 			//$('.tag_holder').draggable();
 			//$('#sortable').sortable();
@@ -633,10 +671,27 @@
                 });
 
                 */
+/*
+
+                var isDragging = false;
+                $("#dock_box").mousedown(function() {
+					    $(window).mousemove(function() {
+					    	isDragging = true;
+					        refresh_tag_box(false);
+					        $(window).unbind("mousemove");
+					    });
+					}).mouseup(function() {
+					    var wasDragging = isDragging;
+					    isDragging = false;
+					    $(window).unbind("mousemove");
+					    if (!wasDragging) { //was clicking
+					        //alert();
+					    }
+					});
 
 
-
-		});
+					*/
+		});//end ready function
 
 
 
