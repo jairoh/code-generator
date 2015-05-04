@@ -7,7 +7,7 @@
 
   <link href="{{$root_path}}css/ranking.css" rel="stylesheet">
   <script type="text/javascript" src="{{$root_path}}js/ranking.js" ></script>
-
+  <script type="text/javascript" src="{{$root_path}}js/logout_script.js"></script>
 @stop
 
 
@@ -21,7 +21,7 @@
 			<li><a href="{{$root_path}}profile" >Profile[<?php echo Session::get( 'firstname' ) . " " . Session::get( 'lastname' ); ?>]</a></li>
 			<li><a href="{{$root_path}}ranking" >Ranking</a></li>
 			<?php if ( Session::get( 'user_type_id' ) == 1 ) { ?><li><a href="{{$root_path}}admin">Admin</a></li><?php } ?>
-			<li><a href="{{$root_path}}logout">Logout</a></li>
+			<li><a href="#" onClick="do_logout();">Logout</a></li>
 		</ul>
 	</div>
 

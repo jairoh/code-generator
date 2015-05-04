@@ -45,6 +45,7 @@
     
     <link rel="stylesheet" type="text/css" href="{{$root_path}}css/demo.css" >
     <script type="text/javascript" src="{{$root_path}}js/demo.js" ></script>
+    <script type="text/javascript" src="{{$root_path}}js/logout_script.js"></script>
 @stop
 
 @section( 'content' )
@@ -58,7 +59,7 @@
       <?php if ( Session::get( 'user_id' ) ) {?> <li><a href="{{$root_path}}profile" >Profile[<?php echo Session::get( 'firstname' ) . " " . Session::get( 'lastname' ); ?>]</a></li> <?php } ?>
       <?php if ( Session::get( 'user_id' ) ) {?> <li><a href="{{$root_path}}ranking" >Ranking</a></li> <?php } ?>
       <?php if ( Session::get( 'user_type_id' ) == 1 ) { ?><li><a href="{{$root_path}}admin">Admin</a></li><?php } ?>
-      <?php if ( Session::get( 'user_id' ) ) {?> <li><a href="{{$root_path}}logout">Logout</a></li> <?php } else { ?> 
+      <?php if ( Session::get( 'user_id' ) ) {?> <li><a href="#" onClick="do_logout();" >Logout</a></li> <?php } else { ?> 
       <li><a href="{{$root_path}}login">Login</a></li> <?php } ?>
     </ul>
   </div>
