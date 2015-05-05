@@ -60,12 +60,12 @@ function add_print_value(){
 	}
 	else if(type=="int"||type=="double"||type=="long"||type=="float"||type=="boolean"){
 		$(this.print_tag_id).attr('val', val );
-		$(this.print_tag_id).text($(this.print_tag_id).attr('class')+'('+val+')');
+		$(this.print_tag_id).text('println('+val+')');
 		
 	}
 	else if(type=="char"){
 		$(this.print_tag_id).attr('val', "\'" + val + "\'" );
-		$(this.print_tag_id).text($(this.print_tag_id).attr('class')+"('"+val+"')");
+		$(this.print_tag_id).text("println('"+val+"')");
 	}
 
 	$(this.print_tag_id).attr("datatype",type);
@@ -857,7 +857,7 @@ function test_loop(t){
 
 
 
-
+	
 
  
 
