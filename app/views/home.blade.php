@@ -337,6 +337,7 @@
 				BSCS IV Thesis Project <br>
 				College of Computer Studies <br>
 				Foundation University <br>
+				Dumaguete City <br>
 				E-mail: <a href="mailto:fucs2014@gmail.com">fucs2014@gmail.com</a> <br>
 				-- <br>
 				All Rights Reserved. <br>

@@ -194,7 +194,8 @@
                 <div class="instruction">\
                     ?\
                     <div class="instruction_box">\
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
+						A variable is a container that holds values that are used in a Java program. Every variable must be declared to use a data type. For example, a variable could be declared to use one of the eight primitive data types: byte, short, int, long, float, double, char or boolean. And, every variable must be given an initial value before it can be used.\
+						Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/variables.html</a>\
                     </div><!--end of instruction_box-->\
                 </div><!--end of instruction-->\
                 Variable\
@@ -209,7 +210,8 @@
                 <div class="instruction">\
                     ?\
                     <div class="instruction_box">\
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
+                        This stream is already open and ready to display output or another output destination specified by the host environment or user.\
+                        Read More: <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/System.html#out" target="_blank" >http://docs.oracle.com/javase/7/docs/api/java/lang/System.html#out</a>\
                     </div><!--end of instruction_box-->\
                 </div><!--end of instruction-->\
                 println\
@@ -226,7 +228,8 @@
                 <div class="instruction">\
                     ?\
                     <div class="instruction_box">\
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
+                         This stream is already open and ready to display output or another output destination specified by the host environment or user.\
+                         Read More: <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/System.html#out" target="_blank" >http://docs.oracle.com/javase/7/docs/api/java/lang/System.html#out</a>\
                     </div><!--end of instruction_box-->\
                 </div><!--end of instruction-->\
                 print\
@@ -243,8 +246,9 @@
 									<div class="instruction">\
 					                    ?\
 					                    <div class="instruction_box">\
-					                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
-					                    </div><!--end of instruction_box-->\
+					                        The if statement tells your program to execute a certain section of code only if a particular test evaluates to true. \
+ 					                        Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html</a>\
+ 					                    </div><!--end of instruction_box-->\
 					                </div><!--end of instruction-->\
 									if\
     								</div><!--end of if_icon-->\
@@ -288,7 +292,8 @@
 									<div class="instruction">\
 					                    ?\
 					                    <div class="instruction_box">\
-					                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
+					                        The else if statement provides a secondary path of execution when an "if" clause evaluates to false. \
+	                				        Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html</a>\
 					                    </div><!--end of instruction_box-->\
 					                </div><!--end of instruction-->\
 									else if\
@@ -331,7 +336,8 @@
 								        <div class="instruction">\
 					                    ?\
 					                    <div class="instruction_box">\
-					                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
+					    	                The else statement provides a secondary path of execution when an "if" clause evaluates to false. \
+						                    Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html</a>\
 					                    </div><!--end of instruction_box-->\
 					                </div><!--end of instruction-->\
 								        else\
@@ -365,7 +371,8 @@
 							        <div class="instruction">\
 					                    ?\
 					                    <div class="instruction_box">\
-					                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
+											Evaluates its expression, then executes all statements that follow the matching case label.	\
+											Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html</a>\
 					                    </div><!--end of instruction_box-->\
 					                </div><!--end of instruction-->\
 							        switch case\
@@ -419,7 +426,8 @@
         <div class="instruction">\
             ?\
             <div class="instruction_box">\
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
+				The while statement continually executes a block of statements while a particular condition is true. \
+				Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html</a>\
             </div><!--end of instruction_box-->\
         </div><!--end of instruction-->\
             while\
@@ -489,7 +497,8 @@
         <div class="instruction">\
 	        ?\
 	        <div class="instruction_box">\
-	            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
+				The do-while statement evaluates its expression at the bottom of the loop instead of the top.\
+				Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html</a>\
 	        </div><!--end of instruction_box-->\
 	    </div><!--end of instruction-->\
             do while\
@@ -563,8 +572,9 @@
 				            <div class="instruction">\
 				                ?\
 				                <div class="instruction_box">\
-				                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.\
-				                </div><!--end of instruction_box-->\
+									The for statement provides a compact way to iterate over a range. Programmers often refer to it as the "for loop" because of the way in which it repeatedly loops until a particular condition is satisfied.\
+									Read More: <a href="http://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html" target="_blank" >http://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html</a>\
+        		                </div><!--end of instruction_box-->\
 				            </div><!--end of instruction-->\
 				              for loop\
 				            </div><!--end of if_icon-->\

@@ -7,8 +7,9 @@ body {
 		#left_side_bar {
 			//border:solid 1px #666;
 			float: left;
-			width: 16%;
+			width: 18%;
 			height: 100%;
+			word-wrap: break-word;
 			border-bottom: none;
 			border-top: none;
 			background: #EEE;
@@ -158,7 +159,7 @@ body {
 		#generated_code_box {
 			border:solid 1px #CCC;
 			float: right;
-			width: 37.9%;
+			width: 35.9%;
 			
 			height:70%;
 			overflow: auto;
@@ -168,7 +169,7 @@ body {
 		#output_box {
 			border:solid 1px #ccc;
 			float: right;
-			width: 37.9%;
+			width: 35.9%;
 			height: 29%;
 		}
 
@@ -448,6 +449,7 @@ body {
 		}
 
 		.instruction_box {
+			font-weight: normal;
 			//border:solid 1px #000;
 			width: 150px;
 			//height: 100px;
@@ -460,8 +462,8 @@ body {
 			position: absolute;
 			z-index: 5;
 			color: #000;
-			text-align: justify;
-			font-size: 15px;
+			text-align: left;
+			font-size: 12px;
 			padding: 7px;
 		}
 

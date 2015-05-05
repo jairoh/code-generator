@@ -33,12 +33,15 @@
                 <tr>
                     <td>
                         <div class="input-group">
-                            <div class="input-group-addon">@</div>
+                            <div class="input-group-addon"></div>
                             <input class="form-control" name="email" value="<?= Input::old( 'email') ?>" type="email" placeholder="Enter email">
                         </div>
                     </td>
                     <td>
-                        <input type="password" name="password" class="form-control" placeholder="Enter password">
+                        <div class="input-group">
+                            <div class="input-group-addon"></div>
+                            <input type="password" name="password" class="form-control" placeholder="Enter password">
+                        </div>
                     </td>
                     <td><button type="submit" id="login_button" class="btn btn-success" >Login</button></td>
                 </tr>
