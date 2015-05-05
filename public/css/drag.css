@@ -161,7 +161,7 @@ body {
 			float: right;
 			width: 35.9%;
 			
-			height:70%;
+			height:65%;
 			overflow: auto;
 			background: #000;
 		}
@@ -170,7 +170,7 @@ body {
 			border:solid 1px #ccc;
 			float: right;
 			width: 35.9%;
-			height: 29%;
+			height: 35%;
 		}
 
 		.responsive {

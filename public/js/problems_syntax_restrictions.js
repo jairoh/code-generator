@@ -95,7 +95,7 @@ function E_Prob_4_res ( statements_arr ) {
 
 	}
 
-	line_error = "Cannot switch statement with a parameter of character variable.";
+	line_error = "Cannot find switch statement with a parameter of character variable.";
 	return false;
 } 
 
@@ -109,6 +109,32 @@ function E_Prob_5_res ( statements_arr ) {
 	}
 
 	line_error = "Cannot find relational comparison of the initialized variable if it is greater than or equal to 30.";
+	return false;
+}
+
+//check if the switch variable parameter has a integer data type
+function A_Prob_1_res ( statements_arr ) {
+	
+	//get the identifier parameter in the switch statement
+	for ( var i in statements_arr ) {
+
+		if ( statements_arr [ i ].trim().match( /^switch\s*\(\s*[A-z][A-z0-9]?\s*\)\s*\{$/ ) ) {
+			var_dec = statements_arr [ i ].trim().replace( /^switch\s*\(\s*([A-z][A-z0-9]?)\s*\)\s*\{$/, "$1" );
+			break;
+		}
+
+	}
+
+
+	//find the character variable
+	regex = RegExp( "^int[ ]+" + var_dec + "[ ]+.+;" );
+	for ( var i in statements_arr ) {
+
+		if ( statements_arr [ i ].trim().match( regex ) ) return true;
+
+	}
+
+	line_error = "Cannot find switch statement with a parameter of integer variable.";
 	return false;
 }
 
