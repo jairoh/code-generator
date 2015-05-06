@@ -219,7 +219,6 @@ function A_Prob_4_res ( statements_arr ) {
 //check if the do while loop is from 10
 function check_do_while_number_of_loops ( statements_arr, loop_n ) {
 
-
 	//get the variable_loop_n
 	for ( var i in statements_arr ) {
 
@@ -237,19 +236,22 @@ function check_do_while_number_of_loops ( statements_arr, loop_n ) {
 
 	//check if the variable_loop_n == 10
 	regex = new RegExp( "^int[ ]+" + var_dec + "[ ]*=[ ]*([0-9]{1,9})[ ]*;$" );
+	loop_validity = false;
 	for ( var i in statements_arr ) {
 
 		if ( statements_arr [ i ].trim().match ( regex ) ) {
-			if ( 10 == statements_arr [ i ].trim().replace( regex, "$1" ) ) {
-				return true;
-			} 
+			if ( 10 == statements_arr [ i ].trim().replace( regex, "$1" ) )
+				loop_validity = true;
 			break;
 		}
 	}
-
-	line_error = "Do while loop must start from 10.";
-	return false;
+	if ( ! loop_validity ) {
+		line_error = "Do while loop must start from 10.";
+		return false;
+	}
+	return true;
 }
+
 
 //check if countdown is from 10 and ( var_dec == var_dec )
 function A_Prob_5_res ( statements_arr ) {
