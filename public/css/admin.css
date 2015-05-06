@@ -1,9 +1,12 @@
 .problem_list {
 	margin: 20px auto;
 	width: 1000px;
-	text-align: center;
+	text-align: left;
 	border: 0;
 	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+.prob_title {
+	text-align: center;
 }
 .problem_list table {
 	text-align: left;

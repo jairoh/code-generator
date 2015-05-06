@@ -27,7 +27,7 @@
   <!-- EASY PROBLEMS -->
   <table class="problem_list table" >
     <tr class="tr_green" >
-      <td colspan="3" ><b>Manage [Easy Problems]</b></td>
+      <td colspan="3" class="prob_title" ><b>Manage [Easy Problems]</b></td>
     </tr>
     <tr>
       <td><b>Level</b></td>
@@ -52,7 +52,7 @@
   <!-- AVERAGE PROBLEMS -->
   <table class="problem_list table" >
     <tr class="tr_blue" >
-      <td colspan="3" ><b>Manage [Average Problems]</b></td>
+      <td colspan="3" class="prob_title" ><b>Manage [Average Problems]</b></td>
     </tr>
 
     <tr>
@@ -76,7 +76,7 @@
    <!-- DIFFICULT PROBLEMS -->
   <table class="problem_list table" >
     <tr class="tr_yellow" >
-      <td colspan="3" ><b>Manage [Difficult Problems]</b></td>
+      <td colspan="3" class="prob_title" ><b>Manage [Difficult Problems]</b></td>
     </tr>
 
     <tr>

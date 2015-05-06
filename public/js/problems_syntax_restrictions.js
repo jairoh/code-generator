@@ -270,3 +270,45 @@ function A_Prob_5_res ( statements_arr ) {
 	line_error = "Cannot find a loop from an identifier to another.";
 	return false;
 }
+
+//check if there's a print( var_integer ) inside the check_do_while
+function D_Prob_1_res ( statements_arr ) {
+
+	var_dec = "";
+	counter = 0;
+
+	//get the variable name
+	for ( var i in statements_arr ) {
+
+		if ( statements_arr [ i ].trim().match( /^\}\s*while\s*\(\s*21\s*>\s*([A-z][A-z0-9]?)\s*\);$/ ) ) {
+			var_dec = statements_arr [ i ].trim().replace( /^\}\s*while\s*\(\s*21\s*>\s*([A-z][A-z0-9]?)\s*\);$/, "$1" );
+			counter = i;
+			break;
+		} else if ( statements_arr [ i ].trim().match( /^\}\s*while\s*\(\s*([A-z][A-z0-9]?)\s*<\s*21\s*\);$/ ) ) {
+			var_dec = statements_arr [ i ].trim().replace( /^\}\s*while\s*\(\s*([A-z][A-z0-9]?)\s*<\s*21\s*\);$/, "$1" );
+			counter = i;
+			break;
+		}
+		
+	}
+	
+	//check if the var int has been displayed previously
+	if ( var_dec.match( /[A-z][A-z0-9]?/ ) ) {
+		regex = new RegExp( "^System.out.println[(][ ]*" + var_dec + "[ ]*[)];$" );
+		
+		//check prev
+		for ( var i = counter - 1; i >= 0; i-- ) {
+			if ( statements_arr [ i ].trim().match( regex ) ) return true;
+		}
+
+		line_error = "Cannot find a println statement w/ a parameter of an integer variable inside the do while loop.";
+		return false;
+
+	}
+
+
+	line_error = "Cannot find do while loop relational comparison of the initialized variable less 21";
+	return false;
+	
+
+}
