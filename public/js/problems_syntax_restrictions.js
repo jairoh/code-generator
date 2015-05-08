@@ -75,12 +75,16 @@ function E_Prob_3_res ( statements_arr ) {
 
 //check if the switch variable parameter has a character data type
 function E_Prob_4_res ( statements_arr ) {
-	
+	passed = false;
+	switch_index = 0;
+
+
 	//get the identifier parameter in the switch statement
 	for ( var i in statements_arr ) {
 
 		if ( statements_arr [ i ].trim().match( /^switch\s*\(\s*[A-z][A-z0-9]?\s*\)\s*\{$/ ) ) {
 			var_dec = statements_arr [ i ].trim().replace( /^switch\s*\(\s*([A-z][A-z0-9]?)\s*\)\s*\{$/, "$1" );
+			switch_index = i;
 			break;
 		}
 
@@ -91,12 +95,40 @@ function E_Prob_4_res ( statements_arr ) {
 	regex = RegExp( "^char[ ]+" + var_dec + "[ ]+.+;" );
 	for ( var i in statements_arr ) {
 
-		if ( statements_arr [ i ].trim().match( regex ) ) return true;
-
+		if ( statements_arr [ i ].trim().match( regex ) ) { 
+			passed =  true;
+			break;
+		}
 	}
+	if ( ! passed ) {
+		line_error = "Cannot find switch statement with a parameter of character variable.";
+		return false;
+	}
+	
 
-	line_error = "Cannot find switch statement with a parameter of character variable.";
-	return false;
+	//check if cases A-E is found
+	cases_required = {
+		A : -1,
+		B : -1,
+		C : -1,
+		D : -1,
+		E : -1,
+	};
+	for ( var i = switch_index; i < statements_arr.length; i++ ) {
+		if ( statements_arr [ i ].trim().match( /^case\s+'A'\s*:$/ ) ) cases_required [ 'A' ] = 1;
+		if ( statements_arr [ i ].trim().match( /^case\s+'B'\s*:$/ ) ) cases_required [ 'B' ] = 1;
+		if ( statements_arr [ i ].trim().match( /^case\s+'C'\s*:$/ ) ) cases_required [ 'C' ] = 1;
+		if ( statements_arr [ i ].trim().match( /^case\s+'D'\s*:$/ ) ) cases_required [ 'D' ] = 1;
+		if ( statements_arr [ i ].trim().match( /^case\s+'E'\s*:$/ ) ) cases_required [ 'E' ] = 1;
+	}
+	if ( cases_required [ 'A' ] == -1 ) { line_error = "Cannot find case conditional 'A'."; return false; }
+	if ( cases_required [ 'B' ] == -1 ) { line_error = "Cannot find case conditional 'B'."; return false; }
+	if ( cases_required [ 'C' ] == -1 ) { line_error = "Cannot find case conditional 'C'."; return false; }
+	if ( cases_required [ 'D' ] == -1 ) { line_error = "Cannot find case conditional 'D'."; return false; }
+	if ( cases_required [ 'E' ] == -1 ) { line_error = "Cannot find case conditional 'E'."; return false; }
+
+	return passed;
+
 } 
 
 //check if there a comparison: (var_dec >= 30 )
@@ -114,12 +146,15 @@ function E_Prob_5_res ( statements_arr ) {
 
 //check if the switch variable parameter has a integer data type
 function A_Prob_1_res ( statements_arr ) {
-	
+	passed = false;
+	switch_index = 0;
+
 	//get the identifier parameter in the switch statement
 	for ( var i in statements_arr ) {
 
 		if ( statements_arr [ i ].trim().match( /^switch\s*\(\s*[A-z][A-z0-9]?\s*\)\s*\{$/ ) ) {
 			var_dec = statements_arr [ i ].trim().replace( /^switch\s*\(\s*([A-z][A-z0-9]?)\s*\)\s*\{$/, "$1" );
+			switch_index = i;
 			break;
 		}
 
@@ -130,12 +165,38 @@ function A_Prob_1_res ( statements_arr ) {
 	regex = RegExp( "^int[ ]+" + var_dec + "[ ]+.+;" );
 	for ( var i in statements_arr ) {
 
-		if ( statements_arr [ i ].trim().match( regex ) ) return true;
+		if ( statements_arr [ i ].trim().match( regex ) ) { 
+			passed =  true;
+			break;
+		}
 
 	}
 
-	line_error = "Cannot find switch statement with a parameter of integer variable.";
-	return false;
+	if ( ! passed ) {
+		line_error = "Cannot find switch statement with a parameter of integer variable.";
+		return false;
+	}
+
+	//check if cases 1-5 is found
+	cases_required = {
+		1 : -1,
+		2 : -1,
+		3 : -1,
+		4 : -1
+	};
+	for ( var i = switch_index; i < statements_arr.length; i++ ) {
+		if ( statements_arr [ i ].trim().match( /^case\s+1\s*:$/ ) ) cases_required [ 1 ] = 1;
+		if ( statements_arr [ i ].trim().match( /^case\s+2\s*:$/ ) ) cases_required [ 2 ] = 1;
+		if ( statements_arr [ i ].trim().match( /^case\s+3\s*:$/ ) ) cases_required [ 3 ] = 1;
+		if ( statements_arr [ i ].trim().match( /^case\s+4\s*:$/ ) ) cases_required [ 4 ] = 1;
+	}
+	if ( cases_required [ 1 ] == -1 ) { line_error = "Cannot find case 1:."; return false; }
+	if ( cases_required [ 2 ] == -1 ) { line_error = "Cannot find case 2:."; return false; }
+	if ( cases_required [ 3 ] == -1 ) { line_error = "Cannot find case 3:."; return false; }
+	if ( cases_required [ 4 ] == -1 ) { line_error = "Cannot find case 4:."; return false; }
+
+	return passed;
+
 }
 
 //check if there a comparison: (var_dec >= 50 or 50 <= var_dec ) and (var_dec >= 80 or 80 <= var_dec) 
