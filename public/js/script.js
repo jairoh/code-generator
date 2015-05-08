@@ -578,13 +578,13 @@
 				            </div><!--end of instruction-->\
 				              for loop\
 				            </div><!--end of if_icon-->\
-				            <div class="forloop" condition="int x = 0; x == 5; x+=1" id="jomarie">\
+				            <div class="forloop" condition="int x = 0; x == 0; x+=1" id="jomarie">\
 				                <div class="upper_box forloop_upper_box" onclick=" get_forloop_this(this);">\
 				                    <table border="0" cellpadding="0" cellspacing="0" class="statement_table">\
 				                        <tr>\
 				                            <td><a class="if_label">for</a></td>\
 				                            <td valign="middle">\
-				                                <div id="forloop_input_text" class="statement_left" onclick=" get_forloop_this(this); forloop_current_value(); show_popup(\'#forloop_statement_box\',\'Input\'); count_variable();">x = 0</div>\
+				                                <div id="forloop_input_text" class="statement_left" onclick=" get_forloop_this(this); show_popup(\'#forloop_choose_box\',\'Choose\'); count_variable();">x = 0</div>\
 				                            </td>\
 				                            \
 				                            <td>\
@@ -598,7 +598,7 @@
 				                                </select>\
 				                            </td>\
 				                            <td>\
-				                                <div class="statement_right" onclick="show_popup(\'#forloop_compare_box\',\'choose\'); ">5</div>\
+				                                <div class="statement_right" onclick="show_popup(\'#forloop_compare_box\',\'choose\'); ">0</div>\
 				                            </td>\
 				                            <td>\
 				                                <select class="in_dec_crement" onchange="add_forloop_condition();">\

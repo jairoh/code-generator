@@ -17,8 +17,12 @@ var while_id = "";//for dowhile and while
 
 $(function(){
 	
-	
-	
+	//Restrict field for integer only
+	$('.integer').on('keypress', function(e){
+		if(e.keyCode<48||e.keyCode>57){
+			e.preventDefault();
+		}
+	});
 	
 	
 });
@@ -56,16 +60,18 @@ function add_print_value(){
 	
 	if(type=="String"){
 		$(this.print_tag_id).attr('val', '\"' + val + '\"' );
-		$(this.print_tag_id).text('println("'+val+'")');
+		$(this.print_tag_id).text($(this.print_tag_id).attr('class')+'("'+val+'")');
 	}
 	else if(type=="int"||type=="double"||type=="long"||type=="float"||type=="boolean"){
 		$(this.print_tag_id).attr('val', val );
-		$(this.print_tag_id).text('println('+val+')');
+		$(this.print_tag_id).text($(this.print_tag_id).attr('class')+'('+val+')');
+		
 		
 	}
 	else if(type=="char"){
 		$(this.print_tag_id).attr('val', "\'" + val + "\'" );
-		$(this.print_tag_id).text("println('"+val+"')");
+		$(this.print_tag_id).text($(this.print_tag_id).attr('class')+"('"+val+"')");
+		
 	}
 
 	$(this.print_tag_id).attr("datatype",type);
@@ -144,7 +150,7 @@ function count_forloop_variable(){
 	});
 
 	$('.forloop_suggested_var').html(forloop_suggested_var);
-
+	$('.forloop_initialize_value select').html(forloop_suggested_var);
 
 
 }//end function
@@ -174,15 +180,25 @@ function count_switch_variable(){
 function count_print(){
 
 	$('#dock_box .println').each(function(){
-		$(this).attr('onclick','get_print_id(this);  print_current_val();');
+		$(this).attr('onclick','get_print_id(this);  print_current_val(); count_parent_variable();');
 	});
 
 	$('#dock_box .print').each(function(){
-		$(this).attr('onclick','get_print_id(this);  print_current_val();');
+		$(this).attr('onclick','get_print_id(this);  print_current_val(); count_parent_variable();');
 	});
 }//end of count_print
 
+//suggest all variables in forloop
+function count_parent_variable(){
+	var suggested_var = "";
+	//get all the parent forloop variables
+	$(this.print_tag_id).parents('.forloop').each(function(){
+		suggested_var+="<option>"+$('.statement_left:first', this).text().split(" ")[0]+"</option>";
+	});
 
+	$('.suggested_var').append(suggested_var);
+
+}//end function
 
 function count_if(){
 	var count=1;
@@ -396,7 +412,7 @@ function add_input_statement(){
 
 
 function reuse_variable(){
-	alert();
+	//alert();
 }//end of use_variable
 
 function add_var_statement(){
@@ -542,7 +558,7 @@ function add_condition(){
 
 		for(var x=0;x<counter_val.length;x++){
 			if(current_option==counter_val[x]){
-				alert("break");
+				//alert("break");
 				break;
 			}
 			option+="<option>"+counter_val[x]+"</option>";
@@ -582,7 +598,7 @@ function forloop_condition(val, e){
 	}
 
 	if(e.keyCode==13){
-		alert(val);
+		//alert(val);
 	}
 }//end of forloop_condition
 
@@ -596,8 +612,26 @@ function forloop_current_value(){
 	
 	$('.forloop_var_name').val(variable_name);
 	$('.forloop_var_value').val(value);
+	
+}//end function
 
 
+
+function forloop_initialize(chosen){
+	
+	//$('.forloop_initialize_value')
+	if(chosen=='variable'){
+		$('.forloop_initialize_value input').attr('class','').hide();
+		$('.forloop_initialize_value select').attr('class','forloop_var_value').show();
+	}
+	else if(chosen=='input'){
+		$('.forloop_initialize_value select').attr('class','').hide();
+		$('.forloop_initialize_value input').attr('class','forloop_var_value').show();
+
+		if($('.forloop_initialize_value input').val().match(/^[A-z]$/)){
+			$('.forloop_initialize_value input').val('');
+		}
+	}
 }//end function
 
 
@@ -857,7 +891,10 @@ function test_loop(t){
 
 
 
-	
+
+
+
+
 
  
 

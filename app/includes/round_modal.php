@@ -5,6 +5,7 @@
     } 
 </style>
     
+    
 
     <div id="statement_box" class="popup_box">
         <table class="popup_table">
@@ -181,28 +182,52 @@
 
 
         <div id="forloop_statement_box" class="popup_box">
+            <table class="popup_table">
+                <tr>
+                    <td>Variable name:</td>
+                    <td>
+                        <input maxLength="2" class="forloop_var_name" type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Value:</td>
+                    <td class="forloop_initialize_value">
+                        <input class="forloop_var_value integer" type="text" />
+                        <select class="forloop_var_value"></select>
+                    </td>
+                </tr>
+             </table>
+             <center>
+            <div id="box_button_holder">
+            <img style="display:none;" id="load_add_account" src="images/loadingtransparent.gif" />
+            <button id="input_type_button" onClick="add_forloop_value();">Ok</button>
+            <button onClick="close_box(); show_popup('#forloop_choose_box','Choose');">Cancel</button>
+            </div><!--end of box_button_holder-->
+            </center>
+        </div><!--end of forloop_statement_box-->
+
+
+    <div id="forloop_choose_box" class="popup_box">
         <table class="popup_table">
             <tr>
-                <td>Variable name:</td>
-                <td>
-                    <input maxLength="2" class="forloop_var_name" type="text" />
-                </td>
-            </tr>
-            <tr>
-                <td>Value:</td>
-                <td>
-                    <input class="forloop_var_value" type="text" onkeyup="close_enter(event.keyCode,'#input_type_button');" />
-                </td>
+                <td><button onClick="close_box(); show_popup('#forloop_statement_box','Variable'); count_forloop_variable(); forloop_current_value(); forloop_initialize('variable');">Variable</button></td>
+                <td><button onClick="close_box(); show_popup('#forloop_statement_box','Input'); forloop_current_value(); forloop_initialize('input');">Input</button></td>
             </tr>
         </table>
-         <center>
-        <div id="box_button_holder">
-        <img style="display:none;" id="load_add_account" src="images/loadingtransparent.gif" />
-        <button id="input_type_button" onClick="add_forloop_value();">Ok</button>
-        <button onClick="close_box();">Cancel</button>
-        </div><!--end of box_button_holder-->
-        </center>
-    </div><!--end of forloop_statement_box-->
+       
+    </div><!--end of forloop_choose_box-->
+
+
+
+    <div id="forloop_compare_box" class="popup_box">
+        <table class="popup_table">
+            <tr>
+                <td><button onClick="close_box(); show_popup('#forloop_variable_box','Variable'); count_forloop_variable();">Variable</button></td>
+                <td><button onClick="close_box(); show_popup('#forloop_input_box','Enter integer value');">Input</button></td>
+            </tr>
+        </table>
+       
+    </div><!--end of forloop_compare_box-->
 
 
     <div id="forloop_compare_box" class="popup_box">
