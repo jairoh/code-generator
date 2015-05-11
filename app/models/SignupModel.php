@@ -6,8 +6,8 @@ Class SignupModel extends Eloquent {
 		'Firstname' => 'required',
 		'Lastname' => 'required',
 		'Email' => 'required|email_found',
-		'password' => 'required|min:6',
-		'password_confirmation' => 'required|min:6|password_match',
+		'Password' => 'required|min:6',
+		'Password_confirmation' => 'required|min:6|password_match',
 		'Gender' => 'required'
 	); 
 	public static $errors;
@@ -31,7 +31,7 @@ Class SignupModel extends Eloquent {
 	}
 
 	public function password_match () {
-		return ( Input::get( 'password' ) == Input::get( 'password_confirmation' ) )? true : false;
+		return ( Input::get( 'Password' ) == Input::get( 'Password_confirmation' ) )? true : false;
 	}
 
 	//extended validation function

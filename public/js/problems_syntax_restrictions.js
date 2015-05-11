@@ -370,7 +370,7 @@ function D_Prob_1_res ( statements_arr ) {
 	}
 
 
-	line_error = "Cannot find do while loop relational comparison of the initialized variable less 21";
+	line_error = "Cannot find do while loop relational comparison of the initialized variable less than 21";
 	return false;
 	
 

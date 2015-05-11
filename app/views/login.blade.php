@@ -105,10 +105,10 @@
                         	<td colspan="3" ><input class="form-control" name="Email" value="<?= Input::old( 'Email') ?>" type="email" placeholder="Enter email"></td>
                         </tr>
                         <tr>
-                        	<td colspan="3" ><input class="form-control" name="password" type="password" placeholder="Enter password"></td>
+                        	<td colspan="3" ><input class="form-control" name="Password" type="password" placeholder="Enter password"></td>
                         </tr>
                         <tr>
-                            <td colspan="3" ><input class="form-control" name="password_confirmation" type="password" placeholder="Confirm password"></td>
+                            <td colspan="3" ><input class="form-control" name="Password_confirmation" type="password" placeholder="Confirm password"></td>
                         </tr>
                         <tr>
                             <td>
@@ -133,8 +133,8 @@
                                     <?= @$errors->first( 'Firstname', '<span class="error_text" >:message</span> <br />' ) ?>
                                     <?= @$errors->first( 'Lastname', '<span class="error_text" >:message</span><br />' ) ?> 
                                     <?= @$errors->first( 'Email', '<span class="error_text" >:message</span><br />' ) ?> 
-                                    <?= @$errors->first( 'password', '<span class="error_text" >:message</span><br />' ) ?>
-                                    <?= @$errors->first( 'password_confirmation', '<span class="error_text" >:message</span><br />' ) ?> 
+                                    <?= @$errors->first( 'Password', '<span class="error_text" >:message</span><br />' ) ?>
+                                    <?= @$errors->first( 'Password_confirmation', '<span class="error_text" >:message</span><br />' ) ?> 
                                     <?= @$errors->first( 'Gender', '<span class="error_text" >:message</span>' ) ?>
                                     </div>
                                 <?php endif; ?>   

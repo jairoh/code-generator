@@ -54,7 +54,7 @@ class LoginController extends BaseController {
 			return Redirect::back()->withInput()->withErrors( SignupModel::$errors );
 		}
 		
-		$this->signupModel->save_account ( Input::get( 'Gender' ), Input::get( 'Firstname' ), Input::get( 'Lastname' ), Input::get( 'Email' ), Input::get( 'password' ) );
+		$this->signupModel->save_account ( Input::get( 'Gender' ), Input::get( 'Firstname' ), Input::get( 'Lastname' ), Input::get( 'Email' ), Input::get( 'Password' ) );
 
 		return Redirect::to('/login')->with('reg_message', 'Registration successful!');
 	}
