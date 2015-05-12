@@ -89,19 +89,19 @@
 							<td colspan="2" ><b>Conditional statements:</b></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(a) <span class="cond" >if</span> statements</td>
+							<td>&emsp;&emsp;(a) <span class="cond" >if</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(b) <span class="cond" >else</span> statements </td>
+							<td>&emsp;&emsp;(b) <span class="cond" >else</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(c) <span class="cond" >else</span>-<span class="cond" >if</span> statements</td>
+							<td>&emsp;&emsp;(c) <span class="cond" >else</span>-<span class="cond" >if</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(d) <span class="switch" >switch</span>-<span class="case">case</span> statements </td>
+							<td>&emsp;&emsp;(d) <span class="switch" >switch</span>-<span class="case">case</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
@@ -124,15 +124,15 @@
 							<td colspan="2" ><b>Repetition Statements:</b></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(a) <span class="while" >while</span> statements</td>
+							<td>&emsp;&emsp;(a) <span class="while" >while</span></td>
 							<td><span class="error" >X</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(b) <span class="do_while" >do</span>-<span class="do_while" >while</span> statements</td>
+							<td>&emsp;&emsp;(b) <span class="do_while" >do</span>-<span class="do_while" >while</span></td>
 							<td><span class="error" >X</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(c) <span class="for" >for</span>-<span class="for" >loop</span> statements</td>
+							<td>&emsp;&emsp;(c) <span class="for" >for</span>-<span class="for" >loop</span></td>
 							<td><span class="error" >X</span></td>
 						</tr>
 					</table>
@@ -165,19 +165,19 @@
 							<td colspan="2" ><b>Conditional statements:</b></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(a) <span class="cond" >if</span> statements</td>
+							<td>&emsp;&emsp;(a) <span class="cond" >if</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(b) <span class="cond" >else</span> statements </td>
+							<td>&emsp;&emsp;(b) <span class="cond" >else</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(c) <span class="cond" >else</span>-<span class="cond" >if</span> statements</td>
+							<td>&emsp;&emsp;(c) <span class="cond" >else</span>-<span class="cond" >if</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(d) <span class="switch" >switch</span>-<span class="case">case</span> statements </td>
+							<td>&emsp;&emsp;(d) <span class="switch" >switch</span>-<span class="case">case</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
@@ -200,15 +200,15 @@
 							<td colspan="2" ><b>Repetition Statements:</b></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(a) <span class="while" >while</span> statements</td>
+							<td>&emsp;&emsp;(a) <span class="while" >while</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(b) <span class="do_while" >do</span>-<span class="do_while" >while</span> statements</td>
+							<td>&emsp;&emsp;(b) <span class="do_while" >do</span>-<span class="do_while" >while</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(c) <span class="for" >for</span>-<span class="for" >loop</span> statements</td>
+							<td>&emsp;&emsp;(c) <span class="for" >for</span>-<span class="for" >loop</span></td>
 							<td><span class="error" >X</span></td>
 						</tr>
 					</table>
@@ -239,19 +239,19 @@
 							<td colspan="2" ><b>Conditional statements:</b></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(a) <span class="cond" >if</span> statements</td>
+							<td>&emsp;&emsp;(a) <span class="cond" >if</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(b) <span class="cond" >else</span> statements </td>
+							<td>&emsp;&emsp;(b) <span class="cond" >else</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(c) <span class="cond" >else</span>-<span class="cond" >if</span> statements</td>
+							<td>&emsp;&emsp;(c) <span class="cond" >else</span>-<span class="cond" >if</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(d) <span class="switch" >switch</span>-<span class="case">case</span> statements </td>
+							<td>&emsp;&emsp;(d) <span class="switch" >switch</span>-<span class="case">case</span> </td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
@@ -274,15 +274,15 @@
 							<td colspan="2" ><b>Repetition Statements:</b></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(a) <span class="while" >while</span> statements</td>
+							<td>&emsp;&emsp;(a) <span class="while" >while</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(b) <span class="do_while" >do</span>-<span class="do_while" >while</span> statements</td>
+							<td>&emsp;&emsp;(b) <span class="do_while" >do</span>-<span class="do_while" >while</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 						<tr>
-							<td>&emsp;&emsp;(c) <span class="for" >for</span>-<span class="for" >loop</span> statements</td>
+							<td>&emsp;&emsp;(c) <span class="for" >for</span>-<span class="for" >loop</span></td>
 							<td><span class="check" >√</span></td>
 						</tr>
 					</table>
