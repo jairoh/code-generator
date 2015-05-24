@@ -11,7 +11,7 @@ $( document ).ready( function () {
 
 		$.ajax( {
 			type: 'POST',
-			url: '/profile/do_profile_update',
+			url: $( '#root_path' ).val() +'profile/do_profile_update',
 			data: {
 				firstname : firstname,
 				lastname : lastname,
@@ -57,7 +57,7 @@ $( document ).ready( function () {
 
 		$.ajax( {
 			type: 'POST',
-			url: '/profile/do_password_update',
+			url: $( '#root_path' ).val() + 'profile/do_password_update',
 			data: {
 				password : password,
 				password_confirmation : password_confirmation

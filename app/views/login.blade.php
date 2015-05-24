@@ -32,22 +32,23 @@
                 </tr>
                 <tr>
                     <td>
-                        <div class="input-group">
-                            <div class="input-group-addon"></div>
-                            <input class="form-control" name="email" value="<?= Input::old( 'email') ?>" type="email" placeholder="Enter email">
-                        </div>
+                        <span class="req" >*</span><input class="form-control" name="email" value="<?= Input::old( 'email') ?>" type="email" placeholder="Enter email">
                     </td>
                     <td>
-                        <div class="input-group">
-                            <div class="input-group-addon"></div>
-                            <input type="password" name="password" class="form-control" placeholder="Enter password">
-                        </div>
+                        <span class="req" >*</span><input type="password" name="password" class="form-control" placeholder="Enter password">
                     </td>
                     <td><button type="submit" id="login_button" class="btn btn-success" >Login</button></td>
                 </tr>
                 <tr>
-                    <td><?= @$errors->first( 'email', '<span class="error_text" >:message</span>' ) ?></td>
-                    <td><?= @$errors->first( 'password', '<span class="error_text" >:message</span>' ) ?></td>
+                    <?php if ( $errors->first( 'email' ) == 'The email field is required.' || 
+                                $errors->first( 'password' ) == 'The password field is required.' ): ?>
+                            <td></td>
+                            <td ><span class="error_text">Required fields (*)</span></td>  
+                    <?php else: ?>
+                            <td></td>
+                            <td><?= @$errors->first( 'password', '<span class="error_text" >:message</span>' ) ?></td>
+                    <?php endif; ?>
+
                 </tr>
 
             <?= Form::close(); ?>
@@ -96,19 +97,19 @@
 
                 	<table border="0" id="signup_table">
                     	<tr>
-                        	<td colspan="3" ><input class="form-control" name="Firstname" value="<?= Input::old( 'Firstname') ?>" type="text" placeholder="Firstname"></td>
+                        	<td colspan="3" ><span class="req" >*</span><input class="form-control" name="Firstname" value="<?= Input::old( 'Firstname') ?>" type="text" placeholder="Firstname"></td>
                         </tr>
                         <tr>
-                        	<td colspan="3" ><input class="form-control" name="Lastname" value="<?= Input::old( 'Lastname') ?>" type="text" placeholder="Lastname"></td>
+                        	<td colspan="3" ><span class="req" >*</span><input class="form-control" name="Lastname" value="<?= Input::old( 'Lastname') ?>" type="text" placeholder="Lastname"></td>
                         </tr>
                         <tr>
-                        	<td colspan="3" ><input class="form-control" name="Email" value="<?= Input::old( 'Email') ?>" type="email" placeholder="Enter email"></td>
+                        	<td colspan="3" ><span class="req" >*</span><input class="form-control" name="Email" value="<?= Input::old( 'Email') ?>" type="email" placeholder="Enter email"></td>
                         </tr>
                         <tr>
-                        	<td colspan="3" ><input class="form-control" name="Password" type="password" placeholder="Enter password"></td>
+                        	<td colspan="3" ><span class="req" >*</span><input class="form-control" name="Password" type="password" placeholder="Enter password"></td>
                         </tr>
                         <tr>
-                            <td colspan="3" ><input class="form-control" name="Password_confirmation" type="password" placeholder="Confirm password"></td>
+                            <td colspan="3" ><span class="req" >*</span><input class="form-control" name="Password_confirmation" type="password" placeholder="Confirm password"></td>
                         </tr>
                         <tr>
                             <td>
@@ -128,15 +129,22 @@
                         <tr>
                             <td colspan="3" >
                                 <?php if( count( $errors ) ): ?>
+                                    
+                                    <?php if ( $errors->first( 'Firstname' ) == 'The firstname field is required.' || 
+                                            $errors->first( 'Lastname' ) == 'The lastname field is required.' ||
+                                            $errors->first( 'Email' ) == 'The email field is required.' || 
+                                            $errors->first( 'Password' ) == 'The password field is required.' ): ?>
+                                        <div class="alert alert-danger" role="alert">
+                                            Required fields (*)    
+                                        </div>
+                                    <?php else: ?>
+                                        <div class="alert alert-danger" role="alert">
+                                            <?= $errors->first( 'Email' ); ?>
+                                             <?= $errors->first( 'Password_confirmation' ); ?>    
+                                        </div>
+                                    <?php endif; ?>
 
-                                    <div class="alert alert-danger" role="alert">
-                                    <?= @$errors->first( 'Firstname', '<span class="error_text" >:message</span> <br />' ) ?>
-                                    <?= @$errors->first( 'Lastname', '<span class="error_text" >:message</span><br />' ) ?> 
-                                    <?= @$errors->first( 'Email', '<span class="error_text" >:message</span><br />' ) ?> 
-                                    <?= @$errors->first( 'Password', '<span class="error_text" >:message</span><br />' ) ?>
-                                    <?= @$errors->first( 'Password_confirmation', '<span class="error_text" >:message</span><br />' ) ?> 
-                                    <?= @$errors->first( 'Gender', '<span class="error_text" >:message</span>' ) ?>
-                                    </div>
+                                    
                                 <?php endif; ?>   
                                 <?php if ( Session::get( 'reg_message' ) ): ?>
                                     <div class="alert alert-success" role="alert">

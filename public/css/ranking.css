@@ -28,6 +28,13 @@
 .easy_name {
 	background-color: #43E032;
 }
+.no_equivalence {
+  padding: 2px 4px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #A100FF;
+  border-radius: 3px;
+}
 .week-picker {
 	position: absolute;
 }

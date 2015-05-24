@@ -42,11 +42,22 @@
 		</tr>
 		<tr>
 			<td><b>Level</b></td>
-			<td colspan="5" ><b>Top 5 Users</b></td>
+			<td colspan="5" >
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<b>Top 5 Users</b>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
 		</tr>
 		<?php foreach( $easy_level_top_students as $problem ): ?>
 			<tr>
-				<td ><b>{{$problem->problem_id}}</b></td>
+				<td ><b><span class="no_equivalence">{{$problem->problem_id}}</span></b></td>
 				<?php if( ! count( $problem->top_students ) ) { echo "<td colspan='5' >No students</td>"; } ?>
 				<?php foreach ( $problem->top_students as $students ): ?> 
 					<td>
@@ -60,7 +71,7 @@
 							</tr>
 							<tr>
 								<td>
-									<kbd class="easy_name" >{{$students->full_name}}</kbd>
+									<kbd class="easy_name" >{{$students->full_name}}</kbd> 
 								</td>
 							</tr>
 							<tr>
@@ -104,11 +115,22 @@
 		</tr>
 		<tr>
 			<td><b>Level</b></td>
-			<td colspan="5" ><b>Top 5 Users</b></td>
+			<td colspan="5" >
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<b>Top 5 Users</b>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
 		</tr>
 		<?php foreach( $average_level_top_students as $problem ): ?>
 			<tr>
-				<td ><b>{{$problem->problem_id - 5}}</b></td>
+				<td ><b><span class="no_equivalence">{{$problem->problem_id - 5}}</span></b></td>
 				<?php if( ! count( $problem->top_students ) ) { echo "<td colspan='5' >No students</td>"; } ?>
 				<?php foreach ( $problem->top_students as $students ): ?> 
 					<td>
@@ -166,11 +188,22 @@
 		</tr>
 		<tr>
 			<td><b>Level</b></td>
-			<td colspan="5" ><b>Top 5 Users</b></td>
+			<td colspan="5" >
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<b>Top 5 Users</b>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span class="glyphicon glyphicon-arrow-right"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</td>
 		</tr>
 		<?php foreach( $dificult_level_top_students as $problem ): ?>
 			<tr>
-				<td ><b>{{$problem->problem_id - 5}}</b></td>
+				<td ><b><span class="no_equivalence">{{$problem->problem_id - 10}}</span></b></td>
 				<?php if( ! count( $problem->top_students ) ) { echo "<td colspan='5' >No students</td>"; } ?>
 				<?php foreach ( $problem->top_students as $students ): ?> 
 					<td>
@@ -214,14 +247,15 @@
 		<?php endforeach; ?>
 	</table>
 
-		<div id="footer_holder">
+	<div id="footer_holder">
 		<div id="main_footer">
 			<p>
 				BSCS IV Thesis Project <br>
 				College of Computer Studies <br>
 				Foundation University <br>
-				Dumaguete City <br>
-				E-mail: <a href="mailto:fucs2014@gmail.com">fucs2014@gmail.com</a> <br>
+				Dumaguete City, Philippines <br>
+				Follow: <a href="https://www.facebook.com/groups/138258766332157/" target="_blank" ><img src="{{$root_path}}img/fb-icon.png" width="20px" ></a> 
+						<a href="https://twitter.com/jairohtuada" target="_blank" ><img src="{{$root_path}}img/twitter-icon.png" width="23https://twitter.com/jairohtuadap target="_blank" x" ></a> <br>
 				-- <br>
 				All Rights Reserved. <br>
 				© 2014-2015 Thesis Project

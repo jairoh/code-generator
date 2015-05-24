@@ -64,6 +64,8 @@
     </ul>
   </div>
 
+  <div id="demo_page_title" ><span>Demo Page</span></div>
+
     <div id="left_side_bar">
         <center>
             <div onclick="javascript:$('#dock_box').html('');" id="clear_box">
@@ -526,7 +528,5 @@
     <div id="output_box"></div><!--end of output_box-->
 
     <?php include(app_path().'/includes/round_modal.php'); ?>
-  
-
 
 @stop

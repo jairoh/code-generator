@@ -345,19 +345,19 @@
     You are attempting to answer Category <b id="cat_name" >Easy</b> Level <b id="level" ></b>.
   </div>
 
-    <div id="footer_holder">
+  <div id="footer_holder">
     <div id="main_footer">
       <p>
         BSCS IV Thesis Project <br>
         College of Computer Studies <br>
         Foundation University <br>
-        Dumaguete City <br>
-        E-mail: <a href="mailto:fucs2014@gmail.com">fucs2014@gmail.com</a> <br>
+        Dumaguete City, Philippines <br>
+        Follow: <a href="https://www.facebook.com/groups/138258766332157/" target="_blank" ><img src="{{$root_path}}img/fb-icon.png" width="20px" ></a> 
+            <a href="https://twitter.com/jairohtuada" target="_blank" ><img src="{{$root_path}}img/twitter-icon.png" width="23https://twitter.com/jairohtuadap target="_blank" x" ></a> <br>
         -- <br>
         All Rights Reserved. <br>
         © 2014-2015 Thesis Project
       </p>
     </div><!--end of main_footer-->
     </div><!--end of footer_folder-->
-
 @stop
